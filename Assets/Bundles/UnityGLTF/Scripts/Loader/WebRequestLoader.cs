@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
-using GLTF;
 using UnityEngine;
-using System.Text.RegularExpressions;
-using System.Net;
 using UnityEngine.Networking;
 
 #if WINDOWS_UWP
 using System.Threading.Tasks;
 #endif
 
-namespace UnityGLTF.Loader {
+namespace Bundles.UnityGLTF.Scripts.Loader {
   public class WebRequestLoader : ILoader {
     public Stream LoadedStream { get; private set; }
 
@@ -36,7 +33,7 @@ namespace UnityGLTF.Loader {
 
     private IEnumerator CreateHTTPRequest(string rootUri, string httpRequestPath) {
       var www = new UnityWebRequest(
-          Path.Combine(rootUri, httpRequestPath),
+          System.IO.Path.Combine(rootUri, httpRequestPath),
           "GET",
           new DownloadHandlerBuffer(),
           null);

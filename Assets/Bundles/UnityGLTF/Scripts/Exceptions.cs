@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Networking;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts {
   [Serializable()]
   public class WebRequestException : Exception {
     public WebRequestException() : base() { }

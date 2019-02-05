@@ -2,7 +2,7 @@
 using GLTF.Schema;
 using UnityEngine;
 
-namespace UnityGLTF.Extensions {
+namespace Bundles.UnityGLTF.Scripts.Extensions {
   public static class SchemaExtensions {
     // glTF matrix: column vectors, column-major storage, +Y up, +Z forward, -X right, right-handed
     // unity matrix: column vectors, column-major storage, +Y up, +Z forward, +X right, left-handed

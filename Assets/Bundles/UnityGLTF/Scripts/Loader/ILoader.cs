@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.IO;
-using GLTF;
-using GLTF.Schema;
 
 #if WINDOWS_UWP
 using System.Threading.Tasks;
 #endif
 
-namespace UnityGLTF.Loader {
+namespace Bundles.UnityGLTF.Scripts.Loader {
   public interface ILoader {
     IEnumerator LoadStream(string relativeFilePath);
 

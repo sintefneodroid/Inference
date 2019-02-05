@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+﻿using Bundles.Path.Core.Scripts.Objects;
 using UnityEditor;
-using PathCreation;
+using UnityEngine;
 
-namespace PathCreation.Examples {
+namespace Bundles.Path.Examples.Scripts.Editor {
   [CustomEditor(typeof(PathSceneTool), true)]
-  public class PathSceneToolEditor : Editor {
+  public class PathSceneToolEditor : UnityEditor.Editor {
     protected PathSceneTool pathTool;
     bool isSubscribed;
 
@@ -50,15 +50,15 @@ namespace PathCreation.Examples {
 
     void OnToolDestroyed() {
       if (pathTool != null) {
-        pathTool.pathCreator.pathUpdated -= OnPathModified;
+        pathTool.pathCreator.PathUpdated -= OnPathModified;
       }
     }
 
     protected virtual void Subscribe() {
       if (pathTool.pathCreator != null) {
         isSubscribed = true;
-        pathTool.pathCreator.pathUpdated -= OnPathModified;
-        pathTool.pathCreator.pathUpdated += OnPathModified;
+        pathTool.pathCreator.PathUpdated -= OnPathModified;
+        pathTool.pathCreator.PathUpdated += OnPathModified;
       }
     }
 

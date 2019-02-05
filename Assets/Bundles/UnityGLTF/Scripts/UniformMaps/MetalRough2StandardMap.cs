@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.UniformMaps {
   class MetalRough2StandardMap : StandardMap,
                                  IMetalRoughUniformMap {
     public MetalRough2StandardMap(int MaxLOD = 1000) : base("Standard", MaxLOD) { }

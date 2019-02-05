@@ -1,18 +1,18 @@
 #if UNITY_2017_1_OR_NEWER
-using UnityEditor.Experimental.AssetImporters;
-using UnityEditor;
-using System.IO;
-using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
 using System;
-using Object = UnityEngine.Object;
 using System.Collections;
-using UnityGLTF.Loader;
-using GLTF.Schema;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Bundles.UnityGLTF.Scripts.Loader;
 using GLTF;
+using GLTF.Schema;
+using UnityEditor;
+using UnityEditor.Experimental.AssetImporters;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.Editor {
   [ScriptedImporter(1, new[] {"glb"})]
   public class GLTFImporter : ScriptedImporter {
     [SerializeField] private bool _removeEmptyRootObjects = true;
@@ -30,7 +30,7 @@ namespace UnityGLTF {
       GameObject gltfScene = null;
       UnityEngine.Mesh[] meshes = null;
       try {
-        sceneName = Path.GetFileNameWithoutExtension(ctx.assetPath);
+        sceneName = System.IO.Path.GetFileNameWithoutExtension(ctx.assetPath);
         gltfScene = CreateGLTFScene(ctx.assetPath);
 
         // Remove empty roots
@@ -173,7 +173,7 @@ namespace UnityGLTF {
                 return matTextures;
               }).ToArray();
 
-          var folderName = Path.GetDirectoryName(ctx.assetPath);
+          var folderName = System.IO.Path.GetDirectoryName(ctx.assetPath);
 
           // Save textures as separate assets and rewrite refs
           // TODO: Support for other texture types
@@ -296,7 +296,7 @@ namespace UnityGLTF {
     }
 
     private GameObject CreateGLTFScene(string projectFilePath) {
-      ILoader fileLoader = new FileLoader(Path.GetDirectoryName(projectFilePath));
+      ILoader fileLoader = new FileLoader(System.IO.Path.GetDirectoryName(projectFilePath));
       using (var stream = File.OpenRead(projectFilePath)) {
         GLTFRoot gLTFRoot;
         GLTFParser.ParseJson(stream, out gLTFRoot);

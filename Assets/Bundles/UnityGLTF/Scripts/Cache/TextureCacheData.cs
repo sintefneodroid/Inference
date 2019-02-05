@@ -1,7 +1,7 @@
 ﻿using GLTF.Schema;
 using UnityEngine;
 
-namespace UnityGLTF.Cache {
+namespace Bundles.UnityGLTF.Scripts.Cache {
   public class TextureCacheData {
     public GLTFTexture TextureDefinition;
     public Texture Texture;

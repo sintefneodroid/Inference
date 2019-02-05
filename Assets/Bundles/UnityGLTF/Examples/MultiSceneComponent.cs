@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
+using Bundles.UnityGLTF.Scripts;
+using Bundles.UnityGLTF.Scripts.Loader;
 using UnityEngine;
-using UnityGLTF.Loader;
 
-namespace UnityGLTF.Examples {
+namespace Bundles.UnityGLTF.Examples {
   public class MultiSceneComponent : MonoBehaviour {
     public int SceneIndex = 0;
     public string Url;

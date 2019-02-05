@@ -1,14 +1,13 @@
-﻿using System.IO;
-using GLTF;
-using UnityEngine;
-using System;
+﻿using System;
 using System.Collections;
+using System.IO;
+using UnityEngine;
 
 #if WINDOWS_UWP
 using System.Threading.Tasks;
 #endif
 
-namespace UnityGLTF.Loader {
+namespace Bundles.UnityGLTF.Scripts.Loader {
   public class FileLoader : ILoader {
     private string _rootDirectoryPath;
     public Stream LoadedStream { get; private set; }
@@ -29,7 +28,7 @@ namespace UnityGLTF.Loader {
     }
 
     private IEnumerator LoadFileStream(string rootPath, string fileToLoad) {
-      var pathToLoad = Path.Combine(rootPath, fileToLoad);
+      var pathToLoad = System.IO.Path.Combine(rootPath, fileToLoad);
       Debug.Log($"Loading path {pathToLoad}");
       if (!File.Exists(pathToLoad)) {
         throw new FileNotFoundException("Buffer file not found", fileToLoad);
@@ -48,7 +47,7 @@ namespace UnityGLTF.Loader {
     }
 
     private void LoadFileStreamSync(string rootPath, string fileToLoad) {
-      var pathToLoad = Path.Combine(rootPath, fileToLoad);
+      var pathToLoad = System.IO.Path.Combine(rootPath, fileToLoad);
       if (!File.Exists(pathToLoad)) {
         throw new FileNotFoundException("Buffer file not found", fileToLoad);
       }

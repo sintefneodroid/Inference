@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
-namespace UnityGLTF.Cache {
+namespace Bundles.UnityGLTF.Scripts.Cache {
   /// <summary>
   /// Caches data in order to construct a unity object
   /// </summary>

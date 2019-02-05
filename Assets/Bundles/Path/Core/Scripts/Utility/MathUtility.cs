@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
-namespace PathCreation.Utility {
+namespace Bundles.Path.Core.Scripts.Utility {
   public static class MathUtility {
     public static bool LineSegmentsIntersect(Vector2 a1, Vector2 a2, Vector2 b1, Vector2 b2) {
       var d = (b2.x - b1.x) * (a1.y - a2.y) - (a1.x - a2.x) * (b2.y - b1.y);

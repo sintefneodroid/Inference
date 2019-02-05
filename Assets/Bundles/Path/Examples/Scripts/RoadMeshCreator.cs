@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Bundles.Path.Core.Scripts.Objects;
 using UnityEngine;
-using PathCreation.Utility;
 
-namespace PathCreation.Examples {
+namespace Bundles.Path.Examples.Scripts {
   public class RoadMeshCreator : PathSceneTool {
     [Header("Road settings")] public float roadWidth = .4f;
     [Range(0, .5f)] public float thickness = .15f;
@@ -29,7 +28,7 @@ namespace PathCreation.Examples {
       var uvs = new Vector2[verts.Length];
       var normals = new Vector3[verts.Length];
 
-      var numTris = 2 * (this.path.NumVertices - 1) + ((this.path.isClosedLoop) ? 2 : 0);
+      var numTris = 2 * (this.path.NumVertices - 1) + ((this.path.IsClosedLoop) ? 2 : 0);
       var roadTriangles = new int[numTris * 3];
       var underRoadTriangles = new int[numTris * 3];
       var sideOfRoadTriangles = new int[numTris * 2 * 3];
@@ -44,15 +43,15 @@ namespace PathCreation.Examples {
       int[] triangleMap = {0, 8, 1, 1, 8, 9};
       int[] sidesTriangleMap = {4, 6, 14, 12, 4, 14, 5, 15, 7, 13, 15, 5};
 
-      var usePathNormals = !(this.path.space == PathSpace.xyz && this.flattenSurface);
+      var usePathNormals = !(this.path.Space == PathSpace.Xyz && this.flattenSurface);
 
       for (var i = 0; i < this.path.NumVertices; i++) {
-        var localUp = (usePathNormals) ? Vector3.Cross(this.path.tangents[i], this.path.normals[i]) : this.path.up;
-        var localRight = (usePathNormals) ? this.path.normals[i] : Vector3.Cross(localUp, this.path.tangents[i]);
+        var localUp = (usePathNormals) ? Vector3.Cross(this.path.Tangents[i], this.path.Normals[i]) : this.path.Up;
+        var localRight = (usePathNormals) ? this.path.Normals[i] : Vector3.Cross(localUp, this.path.Tangents[i]);
 
         // Find position to left and right of current path vertex
-        var vertSideA = this.path.vertices[i] - localRight * Mathf.Abs(this.roadWidth) - this.transform.position;
-        var vertSideB = this.path.vertices[i] + localRight * Mathf.Abs(this.roadWidth) - this.transform.position;
+        var vertSideA = this.path.Vertices[i] - localRight * Mathf.Abs(this.roadWidth) - this.transform.position;
+        var vertSideB = this.path.Vertices[i] + localRight * Mathf.Abs(this.roadWidth) - this.transform.position;
 
         // Add top of road vertices
         verts[vertIndex + 0] = vertSideA;
@@ -68,8 +67,8 @@ namespace PathCreation.Examples {
         verts[vertIndex + 7] = verts[vertIndex + 3];
 
         // Set uv on y axis to path time (0 at start of path, up to 1 at end of path)
-        uvs[vertIndex + 0] = new Vector2(0, this.path.times[i]);
-        uvs[vertIndex + 1] = new Vector2(1, this.path.times[i]);
+        uvs[vertIndex + 0] = new Vector2(0, this.path.Times[i]);
+        uvs[vertIndex + 1] = new Vector2(1, this.path.Times[i]);
 
         // Top of road normals
         normals[vertIndex + 0] = localUp;
@@ -84,7 +83,7 @@ namespace PathCreation.Examples {
         normals[vertIndex + 7] = localRight;
 
         // Set triangle indices
-        if (i < this.path.NumVertices - 1 || this.path.isClosedLoop) {
+        if (i < this.path.NumVertices - 1 || this.path.IsClosedLoop) {
           for (var j = 0; j < triangleMap.Length; j++) {
             roadTriangles[triIndex + j] = (vertIndex + triangleMap[j]) % verts.Length;
             // reverse triangle map for under road so that triangles wind the other way and are visible from underneath

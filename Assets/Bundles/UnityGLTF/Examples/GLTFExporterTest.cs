@@ -1,7 +1,7 @@
-﻿using System.IO;
+﻿using Bundles.UnityGLTF.Scripts;
 using UnityEngine;
 
-namespace UnityGLTF.Examples {
+namespace Bundles.UnityGLTF.Examples {
   public class GLTFExporterTest : MonoBehaviour {
     public string RetrieveTexturePath(Texture texture) { return texture.name; }
 
@@ -10,7 +10,7 @@ namespace UnityGLTF.Examples {
       var exporter = new GLTFSceneExporter(new[] {this.transform}, this.RetrieveTexturePath);
       var appPath = Application.dataPath;
       var wwwPath = appPath.Substring(0, appPath.LastIndexOf("Assets")) + "www";
-      exporter.SaveGLTFandBin(Path.Combine(wwwPath, "TestScene"), "TestScene");
+      exporter.SaveGLTFandBin(System.IO.Path.Combine(wwwPath, "TestScene"), "TestScene");
     }
   }
 }

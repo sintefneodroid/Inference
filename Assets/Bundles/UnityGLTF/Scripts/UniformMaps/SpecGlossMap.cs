@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.UniformMaps {
   class SpecGlossMap : SpecGloss2StandardMap {
     public SpecGlossMap(int MaxLOD = 1000) : base("GLTF/PbrSpecularGlossiness", MaxLOD) { }
     public SpecGlossMap(string shaderName, int MaxLOD = 1000) : base(shaderName, MaxLOD) { }

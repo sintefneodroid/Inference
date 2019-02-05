@@ -1,8 +1,8 @@
-﻿using GLTF;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using GLTF;
 using UnityEngine;
 
-namespace UnityGLTF.Cache {
+namespace Bundles.UnityGLTF.Scripts.Cache {
   public class MeshCacheData {
     public Mesh LoadedMesh { get; set; }
     public Dictionary<string, AttributeAccessor> MeshAttributes { get; set; }

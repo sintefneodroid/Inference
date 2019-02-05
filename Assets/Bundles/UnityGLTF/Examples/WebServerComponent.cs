@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnityGLTF.Examples {
+namespace Bundles.UnityGLTF.Examples {
   public class WebServerComponent : MonoBehaviour {
     private SimpleHTTPServer _server;
 

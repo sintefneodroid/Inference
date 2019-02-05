@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace PathCreationEditor {
+namespace Bundles.Path.Core.Scripts.Objects {
   //[CreateAssetMenu()]
   public class GlobalDisplaySettings : ScriptableObject {
     public enum HandleType {

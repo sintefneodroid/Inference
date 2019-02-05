@@ -1,11 +1,10 @@
-﻿using System;
-using GLTF.Schema;
+﻿using GLTF.Schema;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Material = UnityEngine.Material;
 using Texture = UnityEngine.Texture;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.UniformMaps {
   class StandardMap : IUniformMap {
     protected Material _material;
     private AlphaMode _alphaMode = AlphaMode.OPAQUE;

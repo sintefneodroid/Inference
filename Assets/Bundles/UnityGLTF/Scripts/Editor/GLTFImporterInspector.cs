@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.Editor {
   [CustomEditor(typeof(GLTFImporter))]
   [CanEditMultipleObjects]
   public class GLTFImporterInspector : AssetImporterEditor {

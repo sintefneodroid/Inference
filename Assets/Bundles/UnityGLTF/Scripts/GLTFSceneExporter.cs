@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Bundles.UnityGLTF.Scripts.Extensions;
 using GLTF.Schema;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityGLTF.Extensions;
 using CameraType = GLTF.Schema.CameraType;
 using Object = UnityEngine.Object;
 using WrapMode = GLTF.Schema.WrapMode;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts {
   public class GLTFSceneExporter {
     public delegate string RetrieveTexturePathDelegate(Texture texture);
 
@@ -146,7 +146,7 @@ namespace UnityGLTF {
       var glbLength =
           (int)(GLTFHeaderSize + SectionHeaderSize + jsonStream.Length + SectionHeaderSize + binStream.Length);
 
-      var fullPath = Path.Combine(path, Path.ChangeExtension(fileName, "glb"));
+      var fullPath = System.IO.Path.Combine(path, System.IO.Path.ChangeExtension(fileName, "glb"));
 
       using (var glbFile = new FileStream(fullPath, FileMode.Create)) {
         var writer = new BinaryWriter(glbFile);
@@ -224,7 +224,7 @@ namespace UnityGLTF {
     /// <param name="path">File path for saving the GLTF and binary files</param>
     /// <param name="fileName">The name of the GLTF file</param>
     public void SaveGLTFandBin(string path, string fileName) {
-      var binFile = File.Create(Path.Combine(path, fileName + ".bin"));
+      var binFile = File.Create(System.IO.Path.Combine(path, fileName + ".bin"));
       this._bufferWriter = new BinaryWriter(binFile);
 
       this._root.Scene = this.ExportScene(fileName, this._rootTransforms);
@@ -232,7 +232,7 @@ namespace UnityGLTF {
       this._buffer.Uri = fileName + ".bin";
       this._buffer.ByteLength = (UInt32)this._bufferWriter.BaseStream.Length;
 
-      var gltfFile = File.CreateText(Path.Combine(path, fileName + ".gltf"));
+      var gltfFile = File.CreateText(System.IO.Path.Combine(path, fileName + ".gltf"));
       this._root.Serialize(gltfFile);
 
       #if WINDOWS_UWP
@@ -356,14 +356,14 @@ namespace UnityGLTF {
 
     private string ConstructImageFilenamePath(Texture2D texture, string outputPath) {
       var imagePath = this._retrieveTexturePathDelegate(texture);
-      var filenamePath = Path.Combine(outputPath, imagePath);
+      var filenamePath = System.IO.Path.Combine(outputPath, imagePath);
       if (!ExportFullPath) {
         filenamePath = outputPath + "/" + texture.name;
       }
 
       var file = new FileInfo(filenamePath);
       file.Directory.Create();
-      return Path.ChangeExtension(filenamePath, ".png");
+      return System.IO.Path.ChangeExtension(filenamePath, ".png");
     }
 
     private SceneId ExportScene(string name, Transform[] rootObjTransforms) {
@@ -928,9 +928,9 @@ namespace UnityGLTF {
       this._imageInfos.Add(new ImageInfo {texture = texture as Texture2D, textureMapType = texturMapType});
 
       var imagePath = this._retrieveTexturePathDelegate(texture);
-      var filenamePath = Path.ChangeExtension(imagePath, ".png");
+      var filenamePath = System.IO.Path.ChangeExtension(imagePath, ".png");
       if (!ExportFullPath) {
-        filenamePath = Path.ChangeExtension(texture.name, ".png");
+        filenamePath = System.IO.Path.ChangeExtension(texture.name, ".png");
       }
 
       image.Uri = Uri.EscapeUriString(filenamePath);

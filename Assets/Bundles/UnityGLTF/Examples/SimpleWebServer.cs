@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace UnityGLTF.Examples {
+namespace Bundles.UnityGLTF.Examples {
   class SimpleHTTPServer {
     private readonly string[] _indexFiles = {"index.html", "index.htm", "default.html", "default.htm"};
 
@@ -152,14 +152,14 @@ new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase) {
 
       if (string.IsNullOrEmpty(filename)) {
         foreach (var indexFile in this._indexFiles) {
-          if (File.Exists(Path.Combine(this._rootDirectory, indexFile))) {
+          if (File.Exists(System.IO.Path.Combine(this._rootDirectory, indexFile))) {
             filename = indexFile;
             break;
           }
         }
       }
 
-      filename = Path.Combine(this._rootDirectory, filename);
+      filename = System.IO.Path.Combine(this._rootDirectory, filename);
 
       if (File.Exists(filename)) {
         try {
@@ -167,7 +167,7 @@ new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase) {
 
           //Adding permanent http response headers
           string mime;
-          context.Response.ContentType = _mimeTypeMappings.TryGetValue(Path.GetExtension(filename), out mime)
+          context.Response.ContentType = _mimeTypeMappings.TryGetValue(System.IO.Path.GetExtension(filename), out mime)
                                              ? mime
                                              : "application/octet-stream";
           context.Response.ContentLength64 = input.Length;

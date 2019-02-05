@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.UniformMaps {
   class SpecGloss2StandardMap : StandardMap,
                                 ISpecGlossUniformMap {
     public SpecGloss2StandardMap(int MaxLOD = 1000) : base("Standard (Specular setup)", MaxLOD) { }

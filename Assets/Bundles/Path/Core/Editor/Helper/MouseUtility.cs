@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using Bundles.Path.Core.Scripts.Objects;
 using UnityEditor;
-using PathCreation;
+using UnityEngine;
 
-namespace PathCreationEditor {
+namespace Bundles.Path.Core.Editor.Helper {
   public static class MouseUtility {
     /// <summary>
     /// Determines mouse position in world. If PathSpace is xy/xz, the position will be locked to that plane.
@@ -13,19 +13,19 @@ namespace PathCreationEditor {
       var worldMouse = mouseRay.GetPoint(depthFor3DSpace);
 
       // Mouse can only move on XY plane
-      if (space == PathSpace.xy) {
+      if (space == PathSpace.Xy) {
         var zDir = mouseRay.direction.z;
         if (zDir != 0) {
-          var dstToXYPlane = Mathf.Abs(mouseRay.origin.z / zDir);
-          worldMouse = mouseRay.GetPoint(dstToXYPlane);
+          var dstToXyPlane = Mathf.Abs(mouseRay.origin.z / zDir);
+          worldMouse = mouseRay.GetPoint(dstToXyPlane);
         }
       }
       // Mouse can only move on XZ plane 
-      else if (space == PathSpace.xz) {
+      else if (space == PathSpace.Xz) {
         var yDir = mouseRay.direction.y;
         if (yDir != 0) {
-          var dstToXZPlane = Mathf.Abs(mouseRay.origin.y / yDir);
-          worldMouse = mouseRay.GetPoint(dstToXZPlane);
+          var dstToXzPlane = Mathf.Abs(mouseRay.origin.y / yDir);
+          worldMouse = mouseRay.GetPoint(dstToXzPlane);
         }
       }
 

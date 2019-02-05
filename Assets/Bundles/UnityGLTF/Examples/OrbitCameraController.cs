@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // Taken from http://wiki.unity3d.com/index.php?title=MouseOrbitImproved
-namespace UnityGLTF.Examples {
+namespace Bundles.UnityGLTF.Examples {
   [AddComponentMenu("Camera-Control/Mouse Orbit with zoom")]
   public class OrbitCameraController : MonoBehaviour {
     /// <summary>

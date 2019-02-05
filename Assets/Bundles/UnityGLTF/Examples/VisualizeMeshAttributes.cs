@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnityGLTF.Examples {
+namespace Bundles.UnityGLTF.Examples {
   public class VisualizeMeshAttributes : MonoBehaviour {
     [SerializeField] private MeshFilter Mesh;
     [SerializeField] private float NormalScale = 0.1f;

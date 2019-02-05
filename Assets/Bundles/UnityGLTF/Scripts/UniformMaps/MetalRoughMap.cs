@@ -1,9 +1,6 @@
-﻿using System;
-using UnityEngine;
-using AlphaMode = GLTF.Schema.AlphaMode;
-using CullMode = UnityEngine.Rendering.CullMode;
+﻿using UnityEngine;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.UniformMaps {
   class MetalRoughMap : MetalRough2StandardMap {
     public MetalRoughMap(int MaxLOD = 1000) : base("GLTF/PbrMetallicRoughness", MaxLOD) { }
     public MetalRoughMap(string shaderName, int MaxLOD = 1000) : base(shaderName, MaxLOD) { }

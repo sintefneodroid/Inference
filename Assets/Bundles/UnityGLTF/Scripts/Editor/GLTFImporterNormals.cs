@@ -1,5 +1,5 @@
 #if UNITY_2017_1_OR_NEWER
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.Editor {
   public enum GLTFImporterNormals {
     Import,
     Calculate,

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
-using PathCreation.Utility;
 using System.Linq;
+using Bundles.Path.Core.Scripts.Utility;
+using UnityEngine;
 
-namespace PathCreation {
+namespace Bundles.Path.Core.Scripts.Objects {
   /// A bezier path is a path made by stitching together any number of (cubic) bezier curves.
   /// A single cubic bezier curve is defined by 4 points: anchor1, control1, control2, anchor2
   /// The curve moves between the 2 anchors, and the shape of the curve is affected by the positions of the 2 control points
@@ -48,8 +48,8 @@ namespace PathCreation {
     /// <summary> Creates a two-anchor path centred around the given centre point </summary>
     ///<param name="isClosed"> Should the end point connect back to the start point? </param>
     ///<param name="space"> Determines if the path is in 3d space, or clamped to the xy/xz plane </param>
-    public BezierPath(Vector3 centre, bool isClosed = false, PathSpace space = PathSpace.xyz) {
-      var dir = (space == PathSpace.xz) ? Vector3.forward : Vector3.up;
+    public BezierPath(Vector3 centre, bool isClosed = false, PathSpace space = PathSpace.Xyz) {
+      var dir = (space == PathSpace.Xz) ? Vector3.forward : Vector3.up;
       float width = 2;
       var controlHeight = .5f;
       var controlWidth = 1f;
@@ -70,7 +70,7 @@ namespace PathCreation {
     ///<param name="points"> List or array of points to create the path from. </param>
     ///<param name="isClosed"> Should the end point connect back to the start point? </param>
     ///<param name="space"> Determines if the path is in 3d space, or clamped to the xy/xz plane </param>
-    public BezierPath(IEnumerable<Vector3> points, bool isClosed = false, PathSpace space = PathSpace.xyz) {
+    public BezierPath(IEnumerable<Vector3> points, bool isClosed = false, PathSpace space = PathSpace.Xyz) {
       var pointsArray = points.ToArray();
 
       if (pointsArray.Length < 2) {
@@ -94,7 +94,7 @@ namespace PathCreation {
     ///<param name="transforms"> List or array of transforms to create the path from. </param>
     ///<param name="isClosed"> Should the end point connect back to the start point? </param>
     ///<param name="space"> Determines if the path is in 3d space, or clamped to the xy/xz plane </param>
-    public BezierPath(IEnumerable<Vector2> transforms, bool isClosed = false, PathSpace space = PathSpace.xy) : this(
+    public BezierPath(IEnumerable<Vector2> transforms, bool isClosed = false, PathSpace space = PathSpace.Xy) : this(
         transforms.Select(p => new Vector3(p.x, p.y)),
         isClosed,
         space) { }
@@ -103,7 +103,7 @@ namespace PathCreation {
     ///<param name="transforms"> List or array of transforms to create the path from. </param>
     ///<param name="isClosed"> Should the end point connect back to the start point? </param>
     ///<param name="space"> Determines if the path is in 3d space, or clamped to the xy/xz plane </param>
-    public BezierPath(IEnumerable<Transform> transforms, bool isClosed = false, PathSpace space = PathSpace.xy) : this(
+    public BezierPath(IEnumerable<Transform> transforms, bool isClosed = false, PathSpace space = PathSpace.Xy) : this(
         transforms.Select(t => t.position),
         isClosed,
         space) { }
@@ -112,7 +112,7 @@ namespace PathCreation {
     ///<param name="points"> List or array of 2d points to create the path from. </param>
     ///<param name="isClosed"> Should the end point connect back to the start point? </param>
     ///<param name="pathSpace"> Determines if the path is in 3d space, or clamped to the xy/xz plane </param>
-    public BezierPath(IEnumerable<Vector2> points, PathSpace space = PathSpace.xyz, bool isClosed = false) : this(
+    public BezierPath(IEnumerable<Vector2> points, PathSpace space = PathSpace.Xyz, bool isClosed = false) : this(
         points.Select(p => new Vector3(p.x, p.y)),
         isClosed,
         space) { }
@@ -184,9 +184,9 @@ namespace PathCreation {
       get { return this.localPosition; }
       set {
         if (this.localPosition != value) {
-          if (this.space == PathSpace.xy) {
+          if (this.space == PathSpace.Xy) {
             value.z = 0;
-          } else if (this.space == PathSpace.xz) {
+          } else if (this.space == PathSpace.Xz) {
             value.y = 0;
           }
 
@@ -353,9 +353,9 @@ namespace PathCreation {
     public void MovePoint(int i, Vector3 pointPos, bool suppressPathModifiedEvent = false) {
       pointPos -= this.localPosition;
 
-      if (this.space == PathSpace.xy) {
+      if (this.space == PathSpace.Xy) {
         pointPos.z = 0;
-      } else if (this.space == PathSpace.xz) {
+      } else if (this.space == PathSpace.Xz) {
         pointPos.y = 0;
       }
 
@@ -415,9 +415,9 @@ namespace PathCreation {
     public Quaternion Rotation {
       get { return this.rotation; }
       set {
-        if (this.space != PathSpace.xyz) {
-          var axis = (this.space == PathSpace.xy) ? Vector3.forward : Vector3.up;
-          var angle = (this.space == PathSpace.xy) ? value.eulerAngles.z : value.eulerAngles.y;
+        if (this.space != PathSpace.Xyz) {
+          var axis = (this.space == PathSpace.Xy) ? Vector3.forward : Vector3.up;
+          var angle = (this.space == PathSpace.Xy) ? value.eulerAngles.z : value.eulerAngles.y;
           value = Quaternion.AngleAxis(angle, axis);
         }
 
@@ -455,9 +455,9 @@ namespace PathCreation {
         }
 
         // Set unused axis to zero
-        if (this.space == PathSpace.xy) {
+        if (this.space == PathSpace.Xy) {
           value.z = 0;
-        } else if (this.space == PathSpace.xz) {
+        } else if (this.space == PathSpace.Xz) {
           value.y = 0;
         }
 
@@ -632,9 +632,9 @@ namespace PathCreation {
       if (this.isClosed) {
         // Handle case with only 2 anchor points separately, as will otherwise result in straight line ()
         if (this.NumAnchorPoints == 2) {
-          var dirAnchorAToB = (this.points[3] - this.points[0]).normalized;
+          var dirAnchorAtoB = (this.points[3] - this.points[0]).normalized;
           var dstBetweenAnchors = (this.points[0] - this.points[3]).magnitude;
-          var perp = Vector3.Cross(dirAnchorAToB, (this.space == PathSpace.xy) ? Vector3.forward : Vector3.up);
+          var perp = Vector3.Cross(dirAnchorAtoB, (this.space == PathSpace.Xy) ? Vector3.forward : Vector3.up);
           this.points[1] = this.points[0] + perp * dstBetweenAnchors / 2f;
           this.points[5] = this.points[0] - perp * dstBetweenAnchors / 2f;
           this.points[2] = this.points[3] + perp * dstBetweenAnchors / 2f;
@@ -661,17 +661,17 @@ namespace PathCreation {
     void UpdateToNewPathSpace(PathSpace previousSpace) {
       // If changing from 3d to 2d space, first find the bounds of the 3d path.
       // The axis with the smallest bounds will be discarded.
-      if (previousSpace == PathSpace.xyz) {
+      if (previousSpace == PathSpace.Xyz) {
         var boundsSize = this.PathBounds.size;
         var minBoundsSize = Mathf.Min(boundsSize.x, boundsSize.y, boundsSize.z);
 
         for (var i = 0; i < this.NumPoints; i++) {
-          if (this.space == PathSpace.xy) {
+          if (this.space == PathSpace.Xy) {
             this.localPosition = new Vector3(this.localPosition.x, this.localPosition.y, 0);
             var x = (minBoundsSize == boundsSize.x) ? this.points[i].z : this.points[i].x;
             var y = (minBoundsSize == boundsSize.y) ? this.points[i].z : this.points[i].y;
             this.points[i] = new Vector3(x, y, 0);
-          } else if (this.space == PathSpace.xz) {
+          } else if (this.space == PathSpace.Xz) {
             this.localPosition = new Vector3(this.localPosition.x, 0, this.localPosition.z);
             var x = (minBoundsSize == boundsSize.x) ? this.points[i].y : this.points[i].x;
             var z = (minBoundsSize == boundsSize.z) ? this.points[i].y : this.points[i].z;
@@ -680,15 +680,15 @@ namespace PathCreation {
         }
       } else {
         // Nothing needs to change when going to 3d space
-        if (this.space != PathSpace.xyz) {
+        if (this.space != PathSpace.Xyz) {
           for (var i = 0; i < this.NumPoints; i++) {
             // from xz to xy
-            if (this.space == PathSpace.xy) {
+            if (this.space == PathSpace.Xy) {
               this.localPosition = new Vector3(this.localPosition.x, this.localPosition.z);
               this.points[i] = new Vector3(this.points[i].x, this.points[i].z, 0);
             }
             // from xy to xz
-            else if (this.space == PathSpace.xz) {
+            else if (this.space == PathSpace.Xz) {
               this.localPosition = new Vector3(this.localPosition.x, 0, this.localPosition.y);
               this.points[i] = new Vector3(this.points[i].x, 0, this.points[i].y);
             }
@@ -696,9 +696,9 @@ namespace PathCreation {
         }
       }
 
-      if (this.space != PathSpace.xyz) {
-        var axis = (this.space == PathSpace.xy) ? Vector3.forward : Vector3.up;
-        var angle = (this.space == PathSpace.xy) ? this.rotation.eulerAngles.z : this.rotation.eulerAngles.y;
+      if (this.space != PathSpace.Xyz) {
+        var axis = (this.space == PathSpace.Xy) ? Vector3.forward : Vector3.up;
+        var angle = (this.space == PathSpace.Xy) ? this.rotation.eulerAngles.z : this.rotation.eulerAngles.y;
         this.rotation = Quaternion.AngleAxis(angle, axis);
       }
 

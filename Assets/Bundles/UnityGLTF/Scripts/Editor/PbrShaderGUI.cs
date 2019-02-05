@@ -1,9 +1,10 @@
 // Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
 
 using System;
+using UnityEditor;
 using UnityEngine;
 
-namespace UnityEditor {
+namespace Bundles.UnityGLTF.Scripts.Editor {
   internal class PbrShaderGUI : ShaderGUI {
     private enum WorkflowMode {
       SpecularGlossiness,

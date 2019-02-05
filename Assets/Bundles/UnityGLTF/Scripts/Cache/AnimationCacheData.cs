@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using GLTF;
+﻿using GLTF;
 
-namespace UnityGLTF.Cache {
+namespace Bundles.UnityGLTF.Scripts.Cache {
   public struct AnimationSamplerCacheData {
     public AttributeAccessor Input;
     public AttributeAccessor Output;

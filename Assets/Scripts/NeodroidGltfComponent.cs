@@ -2,20 +2,20 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Text.RegularExpressions;
+using Bundles.UnityGLTF.Scripts;
+using Bundles.UnityGLTF.Scripts.Loader;
 using GLTF;
 using GLTF.Schema;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-using UnityGLTF;
-using UnityGLTF.Loader;
 
 /// <summary>
 /// Component to load a GLTF scene with
 /// </summary>
 public class NeodroidGltfComponent : MonoBehaviour
 {
-    public string GLTFUri = null;
+    [FormerlySerializedAs("GLTFUri")] public string gltfUri = null;
     public bool Multithreaded = true;
     public bool UseStream = false;
     public GameObject loaderNotication;
@@ -26,7 +26,7 @@ public class NeodroidGltfComponent : MonoBehaviour
 
     public int MaximumLod = 300;
     public int Timeout = 8;
-    public GLTFSceneImporter.ColliderType Collider = GLTFSceneImporter.ColliderType.None;
+    public GLTFSceneImporter.ColliderType c_Collider = GLTFSceneImporter.ColliderType.None;
 
     [SerializeField] private Shader shaderOverride = null;
 
@@ -51,20 +51,20 @@ public class NeodroidGltfComponent : MonoBehaviour
         try
         {
             if (this.UseStream){
-                var directoryPath = URIHelper.GetDirectoryName(GLTFUri);
+                var directoryPath = URIHelper.GetDirectoryName(gltfUri);
                 loader = new FileLoader(directoryPath);
-                var file_name = Path.GetFileName(this.GLTFUri);
+                var file_name = Path.GetFileName(this.gltfUri);
                 file_name = Regex.Replace(file_name , "[^\\w\\._]", "");
                 Debug.Log($"Loading {file_name} from {directoryPath}");
                 sceneImporter = new GLTFSceneImporter(file_name, loader);
             }else{
-                var directoryPath = URIHelper.GetDirectoryName(this.GLTFUri);
+                var directoryPath = URIHelper.GetDirectoryName(this.gltfUri);
                 loader = new WebRequestLoader(directoryPath);
-                sceneImporter = new GLTFSceneImporter(URIHelper.GetFileFromUri(new Uri(this.GLTFUri)), loader);
+                sceneImporter = new GLTFSceneImporter(URIHelper.GetFileFromUri(new Uri(this.gltfUri)), loader);
             }
 
             sceneImporter.SceneParent = this.gameObject.transform;
-            sceneImporter.Collider = this.Collider;
+            sceneImporter.Collider = this.c_Collider;
             sceneImporter.MaximumLod = this.MaximumLod;
             sceneImporter.Timeout = this.Timeout;
             sceneImporter.isMultithreaded = this.Multithreaded;

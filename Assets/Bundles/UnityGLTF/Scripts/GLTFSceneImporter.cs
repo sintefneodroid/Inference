@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using Bundles.UnityGLTF.Scripts.Async;
+using Bundles.UnityGLTF.Scripts.Cache;
+using Bundles.UnityGLTF.Scripts.Extensions;
+using Bundles.UnityGLTF.Scripts.Loader;
+using Bundles.UnityGLTF.Scripts.UniformMaps;
 using GLTF;
 using GLTF.Schema;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityGLTF.Cache;
-using UnityGLTF.Extensions;
-using UnityGLTF.Loader;
-using Matrix4x4 = GLTF.Math.Matrix4x4;
 using Object = UnityEngine.Object;
 using WrapMode = UnityEngine.WrapMode;
 using ThreadPriority = System.Threading.ThreadPriority;
@@ -20,7 +21,7 @@ using ThreadPriority = System.Threading.ThreadPriority;
 using System.Threading.Tasks;
 #endif
 
-namespace UnityGLTF
+namespace Bundles.UnityGLTF.Scripts
 {
     public struct MeshConstructionData
     {
@@ -1597,7 +1598,7 @@ namespace UnityGLTF
         /// <returns>A path without the filename or extension</returns>
         protected static string AbsoluteFilePath(string gltfPath)
         {
-            var fileName = Path.GetFileName(gltfPath);
+            var fileName = System.IO.Path.GetFileName(gltfPath);
             var lastIndex = gltfPath.IndexOf(fileName);
             var partialPath = gltfPath.Substring(0, lastIndex);
             return partialPath;

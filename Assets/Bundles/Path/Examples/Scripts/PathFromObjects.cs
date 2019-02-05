@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Bundles.Path.Core.Scripts.Objects;
+using UnityEngine;
 
-namespace PathCreation.Examples {
+namespace Bundles.Path.Examples.Scripts {
   // Creates a path from an array of transforms and moves along it
 
   [RequireComponent(typeof(TrailRenderer))]
@@ -15,7 +16,7 @@ namespace PathCreation.Examples {
       if (this.waypoints.Length > 0) {
         // Create a new bezier path from the waypoints.
         // The 'true' argument specifies that the path should be a closed loop
-        var bezierPath = new BezierPath(this.waypoints, true, PathSpace.xyz);
+        var bezierPath = new BezierPath(this.waypoints, true, PathSpace.Xyz);
         // Create a vertex path from the bezier path
         this.path = new VertexPath(bezierPath);
       } else {

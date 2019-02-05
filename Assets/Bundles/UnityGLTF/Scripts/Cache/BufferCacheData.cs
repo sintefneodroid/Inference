@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UnityGLTF.Cache {
+namespace Bundles.UnityGLTF.Scripts.Cache {
   public class BufferCacheData : IDisposable {
     public Int64 ChunkOffset { get; set; }
     public System.IO.Stream Stream { get; set; }

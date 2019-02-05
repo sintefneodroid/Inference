@@ -1,11 +1,11 @@
 ﻿using System.Collections;
-using System.IO;
+using Bundles.UnityGLTF.Scripts;
+using Bundles.UnityGLTF.Scripts.Loader;
 using GLTF;
 using GLTF.Schema;
 using UnityEngine;
-using UnityGLTF.Loader;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Examples {
   public class RootMergeComponent : MonoBehaviour {
     public string asset0Path;
     public string asset1Path;
@@ -16,18 +16,18 @@ namespace UnityGLTF {
     // todo undo
     #if !WINDOWS_UWP
     IEnumerator Start() {
-      var fullPath0 = Application.streamingAssetsPath + Path.DirectorySeparatorChar + this.asset0Path;
+      var fullPath0 = Application.streamingAssetsPath + System.IO.Path.DirectorySeparatorChar + this.asset0Path;
       ILoader loader0 = new FileLoader(URIHelper.GetDirectoryName(fullPath0));
 
-      var fullPath1 = Application.streamingAssetsPath + Path.DirectorySeparatorChar + this.asset1Path;
+      var fullPath1 = Application.streamingAssetsPath + System.IO.Path.DirectorySeparatorChar + this.asset1Path;
       ILoader loader1 = new FileLoader(URIHelper.GetDirectoryName(fullPath1));
 
-      yield return loader0.LoadStream(Path.GetFileName(this.asset0Path));
+      yield return loader0.LoadStream(System.IO.Path.GetFileName(this.asset0Path));
       var asset0Stream = loader0.LoadedStream;
       GLTFRoot asset0Root;
       GLTFParser.ParseJson(asset0Stream, out asset0Root);
 
-      yield return loader1.LoadStream(Path.GetFileName(this.asset1Path));
+      yield return loader1.LoadStream(System.IO.Path.GetFileName(this.asset1Path));
       var asset1Stream = loader1.LoadedStream;
       GLTFRoot asset1Root;
       GLTFParser.ParseJson(asset0Stream, out asset1Root);

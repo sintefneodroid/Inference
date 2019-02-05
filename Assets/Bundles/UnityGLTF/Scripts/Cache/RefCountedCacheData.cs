@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace UnityGLTF.Cache {
+namespace Bundles.UnityGLTF.Scripts.Cache {
   /// <summary>
   /// A ref-counted cache data object containing lists of Unity objects that were created for the sake of a GLTF scene/node.
   /// This supports counting the amount of refcounts that will dispose of itself

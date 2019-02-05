@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Bundles.Path.Core.Scripts.Objects;
 using UnityEngine;
 
-namespace PathCreation.Utility {
+namespace Bundles.Path.Core.Scripts.Utility {
   /// Collection of functions related to cubic bezier curves
   /// (a curve with a start and end 'anchor' point, and two 'control' points to define the shape of the curve between the anchors)
   public static class CubicBezierUtility {

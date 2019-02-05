@@ -1,7 +1,7 @@
-﻿namespace PathCreation {
+﻿namespace Bundles.Path.Core.Scripts.Objects {
   public enum PathSpace {
-    xyz,
-    xy,
-    xz
+    Xyz,
+    Xy,
+    Xz
   };
 }

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Bundles.Path.Core.Scripts.Objects;
 using UnityEngine;
 
-namespace PathCreation.Utility {
+namespace Bundles.Path.Core.Scripts.Utility {
   public static class VertexPathUtility {
     public static PathSplitData SplitBezierPathByAngleError(
         BezierPath bezierPath,

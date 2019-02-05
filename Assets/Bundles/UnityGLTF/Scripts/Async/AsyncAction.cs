@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
+using System.Threading;
 #if WINDOWS_UWP
 using System.Threading.Tasks;
 #else
-using System.Threading;
 
 #endif
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts.Async {
   /// <summary>
   /// Creates a thread to run multithreaded operations on
   /// </summary>

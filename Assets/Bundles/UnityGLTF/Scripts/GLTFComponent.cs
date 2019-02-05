@@ -1,12 +1,9 @@
 using System;
 using System.Collections;
-using System.IO;
-using GLTF;
-using GLTF.Schema;
+using Bundles.UnityGLTF.Scripts.Loader;
 using UnityEngine;
-using UnityGLTF.Loader;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts {
   /// <summary>
   /// Component to load a GLTF scene with
   /// </summary>
@@ -38,11 +35,11 @@ namespace UnityGLTF {
           // Path.Combine treats paths that start with the separator character
           // as absolute paths, ignoring the first path passed in. This removes
           // that character to properly handle a filename written with it.
-          this.GLTFUri = this.GLTFUri.TrimStart(new[] {Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar});
-          var fullPath = Path.Combine(base_uri_path, this.GLTFUri);
+          this.GLTFUri = this.GLTFUri.TrimStart(new[] {System.IO.Path.DirectorySeparatorChar, System.IO.Path.AltDirectorySeparatorChar});
+          var fullPath = System.IO.Path.Combine(base_uri_path, this.GLTFUri);
           var directoryPath = URIHelper.GetDirectoryName(fullPath);
           loader = new FileLoader(directoryPath);
-          sceneImporter = new GLTFSceneImporter(Path.GetFileName(this.GLTFUri), loader);
+          sceneImporter = new GLTFSceneImporter(System.IO.Path.GetFileName(this.GLTFUri), loader);
         } else {
           var directoryPath = URIHelper.GetDirectoryName(this.GLTFUri);
           loader = new WebRequestLoader(directoryPath);
@@ -60,8 +57,8 @@ namespace UnityGLTF {
         // Override the shaders on all materials if a shader is provided
         if (this.shaderOverride != null) {
           var renderers = this.gameObject.GetComponentsInChildren<Renderer>();
-          foreach (var renderer_ in renderers) {
-            renderer_.sharedMaterial.shader = this.shaderOverride;
+          foreach (var a_renderer in renderers) {
+            a_renderer.sharedMaterial.shader = this.shaderOverride;
           }
         }
       } finally {

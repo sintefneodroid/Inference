@@ -1,37 +1,37 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
+using Bundles.Path.Core.Scripts.Objects;
 using UnityEditor;
-using PathCreation;
+using UnityEngine;
 
-namespace PathCreationEditor {
+namespace Bundles.Path.Core.Editor.Helper {
   public static class PathHandle {
-    public const float extraInputRadius = .005f;
+    public const float ExtraInputRadius = .005f;
 
-    static Vector2 handleDragMouseStart;
-    static Vector2 handleDragMouseEnd;
-    static Vector3 handleDragWorldStart;
+    static Vector2 _handleDragMouseStart;
+    static Vector2 _handleDragMouseEnd;
+    static Vector3 _handleDragWorldStart;
 
-    static int selectedHandleID;
-    static bool mouseIsOverAHandle;
+    static int _selectedHandleId;
+    static bool _mouseIsOverAHandle;
 
     public enum HandleInputType {
       None,
-      LMBPress,
-      LMBClick,
-      LMBDrag,
-      LMBRelease,
+      LmbPress,
+      LmbClick,
+      LmbDrag,
+      LmbRelease,
     };
 
-    static readonly int hint;
-    static float dstMouseToDragPointStart;
+    static readonly int Hint;
+    static float _dstMouseToDragPointStart;
 
-    static List<int> ids;
+    static List<int> _ids;
 
     static PathHandle() {
-      hint = 109264;
-      ids = new List<int>();
+      Hint = 109264;
+      _ids = new List<int>();
 
-      dstMouseToDragPointStart = float.MaxValue;
+      _dstMouseToDragPointStart = float.MaxValue;
     }
 
     public static Vector3 DrawHandle(
@@ -43,7 +43,7 @@ namespace PathCreationEditor {
         HandleColours colours,
         out HandleInputType inputType,
         int handleIndex) {
-      var id = GetID(handleIndex);
+      var id = GetId(handleIndex);
       var screenPosition = Handles.matrix.MultiplyPoint(position);
       var cachedMatrix = Handles.matrix;
 
@@ -51,50 +51,50 @@ namespace PathCreationEditor {
 
       var eventType = Event.current.GetTypeForControl(id);
       var handleRadius = handleDiameter / 2f;
-      var dstToHandle = HandleUtility.DistanceToCircle(position, handleRadius + extraInputRadius);
+      var dstToHandle = HandleUtility.DistanceToCircle(position, handleRadius + ExtraInputRadius);
       var dstToMouse = HandleUtility.DistanceToCircle(position, 0);
 
       // Handle input events
       if (isInteractive) {
         // Repaint if mouse is entering/exiting handle (for highlight colour)
         if (dstToHandle == 0) {
-          if (!mouseIsOverAHandle) {
+          if (!_mouseIsOverAHandle) {
             HandleUtility.Repaint();
-            mouseIsOverAHandle = true;
+            _mouseIsOverAHandle = true;
           }
         } else {
-          if (mouseIsOverAHandle) {
+          if (_mouseIsOverAHandle) {
             HandleUtility.Repaint();
-            mouseIsOverAHandle = false;
+            _mouseIsOverAHandle = false;
           }
         }
 
         switch (eventType) {
           case EventType.MouseDown:
             if (Event.current.button == 0 && Event.current.modifiers != EventModifiers.Alt) {
-              if (dstToHandle == 0 && dstToMouse < dstMouseToDragPointStart) {
-                dstMouseToDragPointStart = dstToMouse;
+              if (dstToHandle == 0 && dstToMouse < _dstMouseToDragPointStart) {
+                _dstMouseToDragPointStart = dstToMouse;
                 GUIUtility.hotControl = id;
-                handleDragMouseEnd = handleDragMouseStart = Event.current.mousePosition;
-                handleDragWorldStart = position;
-                selectedHandleID = id;
-                inputType = HandleInputType.LMBPress;
+                _handleDragMouseEnd = _handleDragMouseStart = Event.current.mousePosition;
+                _handleDragWorldStart = position;
+                _selectedHandleId = id;
+                inputType = HandleInputType.LmbPress;
               }
             }
 
             break;
 
           case EventType.MouseUp:
-            dstMouseToDragPointStart = float.MaxValue;
+            _dstMouseToDragPointStart = float.MaxValue;
             if (GUIUtility.hotControl == id && Event.current.button == 0) {
               GUIUtility.hotControl = 0;
-              selectedHandleID = -1;
+              _selectedHandleId = -1;
               Event.current.Use();
 
-              inputType = HandleInputType.LMBRelease;
+              inputType = HandleInputType.LmbRelease;
 
-              if (Event.current.mousePosition == handleDragMouseStart) {
-                inputType = HandleInputType.LMBClick;
+              if (Event.current.mousePosition == _handleDragMouseStart) {
+                inputType = HandleInputType.LmbClick;
               }
             }
 
@@ -102,12 +102,12 @@ namespace PathCreationEditor {
 
           case EventType.MouseDrag:
             if (GUIUtility.hotControl == id && Event.current.button == 0) {
-              handleDragMouseEnd += new Vector2(Event.current.delta.x, -Event.current.delta.y);
-              var position2 = Camera.current.WorldToScreenPoint(Handles.matrix.MultiplyPoint(handleDragWorldStart))
-                                  + (Vector3)(handleDragMouseEnd - handleDragMouseStart);
-              inputType = HandleInputType.LMBDrag;
+              _handleDragMouseEnd += new Vector2(Event.current.delta.x, -Event.current.delta.y);
+              var position2 = Camera.current.WorldToScreenPoint(Handles.matrix.MultiplyPoint(_handleDragWorldStart))
+                                  + (Vector3)(_handleDragMouseEnd - _handleDragMouseStart);
+              inputType = HandleInputType.LmbDrag;
               // Handle can move freely in 3d space
-              if (space == PathSpace.xyz) {
+              if (space == PathSpace.Xyz) {
                 position = Handles.matrix.inverse.MultiplyPoint(Camera.current.ScreenToWorldPoint(position2));
               }
               // Handle is clamped to xy or xz plane
@@ -126,12 +126,12 @@ namespace PathCreationEditor {
       switch (eventType) {
         case EventType.Repaint:
           var originalColour = Handles.color;
-          Handles.color = (isInteractive) ? colours.defaultColour : colours.disabledColour;
+          Handles.color = (isInteractive) ? colours.DefaultColour : colours.DisabledColour;
 
           if (id == GUIUtility.hotControl) {
-            Handles.color = colours.selectedColour;
-          } else if (dstToHandle == 0 && selectedHandleID == -1 && isInteractive) {
-            Handles.color = colours.highlightedColour;
+            Handles.color = colours.SelectedColour;
+          } else if (dstToHandle == 0 && _selectedHandleId == -1 && isInteractive) {
+            Handles.color = colours.HighlightedColour;
           }
 
           Handles.matrix = Matrix4x4.identity;
@@ -162,33 +162,33 @@ namespace PathCreationEditor {
     }
 
     public struct HandleColours {
-      public Color defaultColour;
-      public Color highlightedColour;
-      public Color selectedColour;
-      public Color disabledColour;
+      public Color DefaultColour;
+      public Color HighlightedColour;
+      public Color SelectedColour;
+      public Color DisabledColour;
 
       public HandleColours(Color defaultColour, Color highlightedColour, Color selectedColour, Color disabledColour) {
-        this.defaultColour = defaultColour;
-        this.highlightedColour = highlightedColour;
-        this.selectedColour = selectedColour;
-        this.disabledColour = disabledColour;
+        this.DefaultColour = defaultColour;
+        this.HighlightedColour = highlightedColour;
+        this.SelectedColour = selectedColour;
+        this.DisabledColour = disabledColour;
       }
     }
 
     static void AddIDs(int upToIndex) {
-      var numIDAtStart = ids.Count;
-      var numToAdd = (upToIndex - numIDAtStart) + 1;
+      var numIdAtStart = _ids.Count;
+      var numToAdd = (upToIndex - numIdAtStart) + 1;
       for (var i = 0; i < numToAdd; i++) {
-        ids.Add(GUIUtility.GetControlID(hint + numIDAtStart + i, FocusType.Passive)); //
+        _ids.Add(GUIUtility.GetControlID(Hint + numIdAtStart + i, FocusType.Passive)); //
       }
     }
 
-    static int GetID(int handleIndex) {
-      if (handleIndex >= ids.Count) {
+    static int GetId(int handleIndex) {
+      if (handleIndex >= _ids.Count) {
         AddIDs(handleIndex);
       }
 
-      return ids[handleIndex];
+      return _ids[handleIndex];
     }
   }
 }

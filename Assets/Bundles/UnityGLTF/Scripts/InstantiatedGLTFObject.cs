@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using UnityGLTF.Cache;
+﻿using Bundles.UnityGLTF.Scripts.Cache;
+using UnityEngine;
 
-namespace UnityGLTF {
+namespace Bundles.UnityGLTF.Scripts {
   /// <summary>
   /// Instantiated GLTF Object component that gets added to the root of every GLTF game object created by a scene importer.
   /// </summary>
