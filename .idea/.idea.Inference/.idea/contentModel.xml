@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\deter\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\deter\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Inference.1932221898.00" t="ExcludeRecursive" />
-    <e p="C:\Users\deter\Documents\GitHub\Inference" t="IncludeRecursive">
+    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_Inference.947834462.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Bundles" t="Include">
-          <e p="Exclude" t="Include">
-            <e p="KeypointData.cs" t="Include" />
-            <e p="KeypointHandle.cs" t="Include" />
-            <e p="KeypointPlacer.cs" t="Include" />
-            <e p="KeypointUI.cs" t="Include" />
-            <e p="MouseOrbit.cs" t="Include" />
-          </e>
           <e p="Path" t="Include">
             <e p="Core" t="Include">
               <e p="Editor" t="Include">
@@ -63,6 +56,81 @@
               <e p="Readme.cs" t="Include" />
             </e>
           </e>
+          <e p="UnityGLTF" t="Include">
+            <e p="Examples" t="Include">
+              <e p="GLTFExporterTest.cs" t="Include" />
+              <e p="MultiSceneComponent.cs" t="Include" />
+              <e p="OrbitCameraController.cs" t="Include" />
+              <e p="RootMergeComponent.cs" t="Include" />
+              <e p="SimpleWebServer.cs" t="Include" />
+              <e p="VisualizeMeshAttributes.cs" t="Include" />
+              <e p="WebServerComponent.cs" t="Include" />
+            </e>
+            <e p="Plugins" t="Include">
+              <e p="Newtonsoft.Json.xml" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Async" t="Include">
+                <e p="AsyncAction.cs" t="Include" />
+                <e p="TaskExtensions.cs" t="Include" />
+              </e>
+              <e p="Cache" t="Include">
+                <e p="AnimationCacheData.cs" t="Include" />
+                <e p="AssetCache.cs" t="Include" />
+                <e p="BufferCacheData.cs" t="Include" />
+                <e p="MaterialCacheData.cs" t="Include" />
+                <e p="MeshCacheData.cs" t="Include" />
+                <e p="RefCountedCacheData.cs" t="Include" />
+                <e p="TextureCacheData.cs" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="GLTFExportMenu.cs" t="Include" />
+                <e p="GLTFImporter.cs" t="Include" />
+                <e p="GLTFImporterInspector.cs" t="Include" />
+                <e p="GLTFImporterNormals.cs" t="Include" />
+                <e p="PbrShaderGUI.cs" t="Include" />
+              </e>
+              <e p="Exceptions.cs" t="Include" />
+              <e p="Extensions" t="Include">
+                <e p="SchemaExtensions.cs" t="Include" />
+              </e>
+              <e p="GLTFComponent.cs" t="Include" />
+              <e p="GLTFSceneExporter.cs" t="Include" />
+              <e p="GLTFSceneImporter.cs" t="Include" />
+              <e p="InstantiatedGLTFObject.cs" t="Include" />
+              <e p="Loader" t="Include">
+                <e p="FileLoader.cs" t="Include" />
+                <e p="ILoader.cs" t="Include" />
+                <e p="StorageFolderLoader.cs" t="Include" />
+                <e p="WebRequestLoader.cs" t="Include" />
+              </e>
+              <e p="URIHelper.cs" t="Include" />
+              <e p="UniformMaps" t="Include">
+                <e p="MetalRough2StandardMap.cs" t="Include" />
+                <e p="MetalRoughMap.cs" t="Include" />
+                <e p="SpecGloss2StandardMap.cs" t="Include" />
+                <e p="SpecGlossMap.cs" t="Include" />
+                <e p="StandardMap.cs" t="Include" />
+                <e p="UniformMap.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="PbrMetallicRoughness.shader" t="Include" />
+              <e p="PbrSpecularGlossiness.shader" t="Include" />
+              <e p="UnityStandardInput.cginc" t="Include" />
+              <e p="UnityStandardShadow.cginc" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="InferenceModels" t="Include">
+          <e p="ONNX" t="Include">
+            <e p="OnnxModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Libaries" t="ExcludeRecursive" />
+        <e p="Scripts" t="Include">
+          <e p="NeodroidGltfComponent.cs" t="Include" />
+          <e p="SetCorrectCameraHeight.cs" t="Include" />
         </e>
         <e p="droid" t="Include">
           <e p="Editor" t="Include">
@@ -107,13 +175,13 @@
               <e p="ScenePreview.cs" t="Include" />
               <e p="SceneReference.cs" t="Include" />
               <e p="SceneReferenceEditor.cs" t="Include" />
+              <e p="ScriptExecutionOrderAttribute.cs" t="Include" />
               <e p="ScriptableObjects" t="Include">
                 <e p="Editor" t="Include">
-                  <e p="ReadmeEditor.cs" t="Include" />
+                  <e p="ReadMeEditor.cs" t="Include" />
                 </e>
-                <e p="Readme.cs" t="Include" />
+                <e p="ReadMe.cs" t="Include" />
               </e>
-              <e p="ScriptExecutionOrderAttribute.cs" t="Include" />
               <e p="SearchableEnum" t="Include">
                 <e p="SearchableEnumDrawer.cs" t="Include" />
                 <e p="SearchablePopup.cs" t="Include" />
@@ -229,6 +297,7 @@
                 <e p="NeodroidFBSStates.cs" t="Include" />
                 <e p="NeodroidFBSTypes.cs" t="Include" />
               </e>
+              <e p="MessageServer.cs" t="Include" />
               <e p="Messages" t="Include">
                 <e p="Body.cs" t="Include" />
                 <e p="Configuration.cs" t="Include" />
@@ -249,7 +318,6 @@
                 <e p="SimulatorConfigurationMessage.cs" t="Include" />
                 <e p="Unobservables.cs" t="Include" />
               </e>
-              <e p="MessageServer.cs" t="Include" />
             </e>
             <e p="Neodroid.Runtime.asmdef" t="Include" />
             <e p="Properties" t="Include">
@@ -583,23 +651,13 @@
             </e>
           </e>
         </e>
-        <e p="Libaries" t="ExcludeRecursive" />
-        <e p="Scripts" t="Include">
-          <e p="ONNX" t="Include">
-            <e p="OnnxModel.cs" t="Include" />
-          </e>
-          <e p="SetCorrectCameraHeight.cs" t="Include" />
-        </e>
       </e>
       <e p="Inference.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
-      <e p="Neodroid.Editor.csproj" t="IncludeRecursive" />
-      <e p="Neodroid.EditorTests.csproj" t="IncludeRecursive" />
-      <e p="Neodroid.Runtime.csproj" t="IncludeRecursive" />
-      <e p="obj" t="ExcludeRecursive" />
       <e p="Temp" t="ExcludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
       </e>
+      <e p="obj" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
