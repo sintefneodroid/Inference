@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -81,11 +81,11 @@ public class NeodroidGltfComponent : MonoBehaviour
                 }
             }
         }
-        /*catch (Exception e)
+        catch (Exception e)
             {
                 if (_loader_text)
                     _loader_text.text = $"Error: {e}";
-            }*/
+            }
         finally
         {
             if (loader != null)
@@ -101,4 +101,4 @@ public class NeodroidGltfComponent : MonoBehaviour
         if (_loaded_ui)
             _loaded_ui.SetActive(true);
     }
-}
+}*/

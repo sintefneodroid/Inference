@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.cnheider.unity-test-package": "https://github.com/cnheider/unity-test-package.git#master",
     "com.unity.package-manager-ui": "2.1.1",
     "com.unity.postprocessing": "2.1.2",
     "com.unity.probuilder": "4.0.3",
@@ -40,11 +39,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.cnheider.unity-test-package": {
-      "hash": "b61c5308a6287d67a1ebe0aa71d0945666497dd0",
-      "revision": "master"
-    }
   }
 }

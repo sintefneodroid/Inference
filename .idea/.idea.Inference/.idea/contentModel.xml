@@ -56,71 +56,6 @@
               <e p="Readme.cs" t="Include" />
             </e>
           </e>
-          <e p="UnityGLTF" t="Include">
-            <e p="Examples" t="Include">
-              <e p="GLTFExporterTest.cs" t="Include" />
-              <e p="MultiSceneComponent.cs" t="Include" />
-              <e p="OrbitCameraController.cs" t="Include" />
-              <e p="RootMergeComponent.cs" t="Include" />
-              <e p="SimpleWebServer.cs" t="Include" />
-              <e p="VisualizeMeshAttributes.cs" t="Include" />
-              <e p="WebServerComponent.cs" t="Include" />
-            </e>
-            <e p="Plugins" t="Include">
-              <e p="Newtonsoft.Json.xml" t="Include" />
-            </e>
-            <e p="Scripts" t="Include">
-              <e p="Async" t="Include">
-                <e p="AsyncAction.cs" t="Include" />
-                <e p="TaskExtensions.cs" t="Include" />
-              </e>
-              <e p="Cache" t="Include">
-                <e p="AnimationCacheData.cs" t="Include" />
-                <e p="AssetCache.cs" t="Include" />
-                <e p="BufferCacheData.cs" t="Include" />
-                <e p="MaterialCacheData.cs" t="Include" />
-                <e p="MeshCacheData.cs" t="Include" />
-                <e p="RefCountedCacheData.cs" t="Include" />
-                <e p="TextureCacheData.cs" t="Include" />
-              </e>
-              <e p="Editor" t="Include">
-                <e p="GLTFExportMenu.cs" t="Include" />
-                <e p="GLTFImporter.cs" t="Include" />
-                <e p="GLTFImporterInspector.cs" t="Include" />
-                <e p="GLTFImporterNormals.cs" t="Include" />
-                <e p="PbrShaderGUI.cs" t="Include" />
-              </e>
-              <e p="Exceptions.cs" t="Include" />
-              <e p="Extensions" t="Include">
-                <e p="SchemaExtensions.cs" t="Include" />
-              </e>
-              <e p="GLTFComponent.cs" t="Include" />
-              <e p="GLTFSceneExporter.cs" t="Include" />
-              <e p="GLTFSceneImporter.cs" t="Include" />
-              <e p="InstantiatedGLTFObject.cs" t="Include" />
-              <e p="Loader" t="Include">
-                <e p="FileLoader.cs" t="Include" />
-                <e p="ILoader.cs" t="Include" />
-                <e p="StorageFolderLoader.cs" t="Include" />
-                <e p="WebRequestLoader.cs" t="Include" />
-              </e>
-              <e p="URIHelper.cs" t="Include" />
-              <e p="UniformMaps" t="Include">
-                <e p="MetalRough2StandardMap.cs" t="Include" />
-                <e p="MetalRoughMap.cs" t="Include" />
-                <e p="SpecGloss2StandardMap.cs" t="Include" />
-                <e p="SpecGlossMap.cs" t="Include" />
-                <e p="StandardMap.cs" t="Include" />
-                <e p="UniformMap.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Shaders" t="Include">
-              <e p="PbrMetallicRoughness.shader" t="Include" />
-              <e p="PbrSpecularGlossiness.shader" t="Include" />
-              <e p="UnityStandardInput.cginc" t="Include" />
-              <e p="UnityStandardShadow.cginc" t="Include" />
-            </e>
-          </e>
         </e>
         <e p="InferenceModels" t="Include">
           <e p="ONNX" t="Include">
@@ -209,7 +144,7 @@
               <e p="readme.txt" t="Include" />
             </e>
           </e>
-          <e p="Libaries" t="Include">
+          <e p="Libraries" t="Include">
             <e p="NetMQ.4.0.0.175-pre" t="Include">
               <e p="lib" t="Include">
                 <e p="net40" t="Include">
@@ -488,23 +423,27 @@
               <e p="PrototypingComponentMenuPath.cs" t="Include" />
             </e>
             <e p="Shaders" t="Include">
-              <e p="Depth.shader" t="Include" />
               <e p="Experimental" t="Include">
                 <e p="AllShader.shader" t="Include" />
                 <e p="OpticalFlow.shader" t="Include" />
-                <e p="UltimateOutline.shader" t="Include" />
+                <e p="Outline.shader" t="Include" />
               </e>
               <e p="FlatColor.shader" t="Include" />
-              <e p="Normal.shader" t="Include" />
-              <e p="ObjectSpace.shader" t="Include" />
+              <e p="Model" t="Include">
+                <e p="Normal.shader" t="Include" />
+                <e p="Tangents.shader" t="Include" />
+                <e p="UVs.shader" t="Include" />
+              </e>
               <e p="ScreenSpaceFlow.shader" t="Include" />
               <e p="Segmentation" t="Include">
-                <e p="Flat.shader" t="Include" />
-                <e p="Outlined.shader" t="Include" />
+                <e p="FlatSegmentation.shader" t="Include" />
+                <e p="OutlinedSegmentation.shader" t="Include" />
               </e>
-              <e p="Tangents.shader" t="Include" />
-              <e p="UVs.shader" t="Include" />
-              <e p="WorldSpace.shader" t="Include" />
+              <e p="Spaces" t="Include">
+                <e p="Depth.shader" t="Include" />
+                <e p="ObjectSpace.shader" t="Include" />
+                <e p="WorldSpace.shader" t="Include" />
+              </e>
             </e>
             <e p="Utilities" t="Include">
               <e p="BoundingBoxes" t="Include">
@@ -651,12 +590,34 @@
             </e>
           </e>
         </e>
+        <e p="unity-test-package" t="Include">
+          <e p="Editor" t="Include">
+            <e p="UnityTestPackage.Editor.asmdef" t="Include" />
+            <e p="UnityTestPackageWindow.cs" t="Include" />
+          </e>
+          <e p="Runtime" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Rotate.cs" t="Include" />
+            </e>
+            <e p="UnityTestPackage.Runtime.asmdef" t="Include" />
+          </e>
+          <e p="Tests" t="Include">
+            <e p="UnityTestPackage.Tests.asmdef" t="Include" />
+            <e p="UnityTestPackageTest.cs" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Inference.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
+      <e p="Neodroid.Editor.csproj" t="IncludeRecursive" />
+      <e p="Neodroid.EditorTests.csproj" t="IncludeRecursive" />
+      <e p="Neodroid.Runtime.csproj" t="IncludeRecursive" />
       <e p="Temp" t="ExcludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
       </e>
+      <e p="UnityTestPackage.Editor.csproj" t="IncludeRecursive" />
+      <e p="UnityTestPackage.Runtime.csproj" t="IncludeRecursive" />
+      <e p="UnityTestPackage.Tests.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
     </e>
   </component>
