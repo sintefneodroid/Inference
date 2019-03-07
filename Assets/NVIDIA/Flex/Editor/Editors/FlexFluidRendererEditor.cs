@@ -32,7 +32,7 @@ namespace NVIDIA.Flex
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(FlexFluidRenderer))]
-    public class FlexFluidRendererEditor : Editor
+    public class FlexFluidRendererEditor : UnityEditor.Editor
     {
         void OnEnable()
         {

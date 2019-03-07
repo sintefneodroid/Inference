@@ -30,7 +30,7 @@ using UnityEngine;
 
 namespace NVIDIA.Flex
 {
-    public class FlexActorEditor : Editor
+    public class FlexActorEditor : UnityEditor.Editor
     {
         SerializedProperty m_container;
         SerializedProperty m_particleGroup;

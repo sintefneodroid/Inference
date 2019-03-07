@@ -31,7 +31,7 @@ using UnityEngine;
 namespace NVIDIA.Flex
 {
     [CustomEditor(typeof(FlexContainer))]
-    public class FlexContainerEditor : Editor
+    public class FlexContainerEditor : UnityEditor.Editor
     {
         SerializedProperty m_simpleMode;
 

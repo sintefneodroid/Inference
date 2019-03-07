@@ -32,7 +32,7 @@ namespace NVIDIA.Flex
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(FlexClothDeformation))]
-    public class FlexClothDeformationEditor : Editor
+    public class FlexClothDeformationEditor : UnityEditor.Editor
     {
         SerializedProperty m_deformationTarget;
         SerializedProperty m_proximityTreshold;

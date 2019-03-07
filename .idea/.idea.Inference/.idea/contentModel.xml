@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_Inference.947834462.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\deter\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\deter\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Inference.634725874.00" t="ExcludeRecursive" />
+    <e p="E:\Projects\GitHub\Inference" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Bundles" t="Include">
+          <e p="Exclude" t="Include">
+            <e p="KeypointData.cs" t="Include" />
+            <e p="KeypointHandle.cs" t="Include" />
+            <e p="KeypointPlacer.cs" t="Include" />
+            <e p="KeypointUI.cs" t="Include" />
+            <e p="MouseOrbit.cs" t="Include" />
+          </e>
           <e p="Path" t="Include">
             <e p="Core" t="Include">
               <e p="Editor" t="Include">
@@ -57,16 +64,6 @@
             </e>
           </e>
         </e>
-        <e p="InferenceModels" t="Include">
-          <e p="ONNX" t="Include">
-            <e p="OnnxModel.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Libaries" t="ExcludeRecursive" />
-        <e p="Scripts" t="Include">
-          <e p="NeodroidGltfComponent.cs" t="Include" />
-          <e p="SetCorrectCameraHeight.cs" t="Include" />
-        </e>
         <e p="droid" t="Include">
           <e p="Editor" t="Include">
             <e p="GameObjects" t="Include">
@@ -99,8 +96,10 @@
               </e>
               <e p="MeshSaver.cs" t="Include" />
               <e p="MissingReferencesFinder.cs" t="Include" />
+              <e p="NeodroidEditorConstants.cs" t="Include" />
               <e p="NeodroidEditorUtilities.cs" t="Include" />
               <e p="NeodroidPackageImporterWindow.cs" t="Include" />
+              <e p="NeodroidSettings.cs" t="Include" />
               <e p="NoteUtilities" t="Include">
                 <e p="NoteEditor.cs" t="Include" />
                 <e p="NoteType.cs" t="Include" />
@@ -110,13 +109,13 @@
               <e p="ScenePreview.cs" t="Include" />
               <e p="SceneReference.cs" t="Include" />
               <e p="SceneReferenceEditor.cs" t="Include" />
-              <e p="ScriptExecutionOrderAttribute.cs" t="Include" />
               <e p="ScriptableObjects" t="Include">
                 <e p="Editor" t="Include">
-                  <e p="ReadMeEditor.cs" t="Include" />
+                  <e p="ReadmeEditor.cs" t="Include" />
                 </e>
-                <e p="ReadMe.cs" t="Include" />
+                <e p="Readme.cs" t="Include" />
               </e>
+              <e p="ScriptExecutionOrderAttribute.cs" t="Include" />
               <e p="SearchableEnum" t="Include">
                 <e p="SearchableEnumDrawer.cs" t="Include" />
                 <e p="SearchablePopup.cs" t="Include" />
@@ -168,6 +167,10 @@
             </e>
           </e>
           <e p="Runtime" t="Include">
+            <e p="EcsPrototyping" t="Include">
+              <e p="HelloRotationSpeedComponent.cs" t="Include" />
+              <e p="HelloRotationSpeedSystem.cs" t="Include" />
+            </e>
             <e p="Environments" t="Include">
               <e p="Experimental" t="Include">
                 <e p="ImitationEnvironment.cs" t="Include" />
@@ -179,6 +182,8 @@
             </e>
             <e p="Interfaces" t="Include">
               <e p="IActor.cs" t="Include" />
+              <e p="ICategoryProvider.cs" t="Include" />
+              <e p="IColorProvider.cs" t="Include" />
               <e p="IConfigurable.cs" t="Include" />
               <e p="IConfigurableConfiguration.cs" t="Include" />
               <e p="IDisplayer.cs" t="Include" />
@@ -197,7 +202,6 @@
               <e p="IHasString.cs" t="Include" />
               <e p="IHasTriple.cs" t="Include" />
               <e p="IManager.cs" t="Include" />
-              <e p="IMaterialManipulator.cs" t="Include" />
               <e p="IMotor.cs" t="Include" />
               <e p="IMotorMotion.cs" t="Include" />
               <e p="IObjective.cs" t="Include" />
@@ -232,7 +236,6 @@
                 <e p="NeodroidFBSStates.cs" t="Include" />
                 <e p="NeodroidFBSTypes.cs" t="Include" />
               </e>
-              <e p="MessageServer.cs" t="Include" />
               <e p="Messages" t="Include">
                 <e p="Body.cs" t="Include" />
                 <e p="Configuration.cs" t="Include" />
@@ -253,6 +256,7 @@
                 <e p="SimulatorConfigurationMessage.cs" t="Include" />
                 <e p="Unobservables.cs" t="Include" />
               </e>
+              <e p="MessageServer.cs" t="Include" />
             </e>
             <e p="Neodroid.Runtime.asmdef" t="Include" />
             <e p="Properties" t="Include">
@@ -265,12 +269,14 @@
                 <e p="KillableActor.cs" t="Include" />
               </e>
               <e p="Configurables" t="Include">
+                <e p="ChildSelectorConfigurable.cs" t="Include" />
                 <e p="ColorConfigurable.cs" t="Include" />
                 <e p="Configurable.cs" t="Include" />
                 <e p="ConfigurableComponentMenuPath.cs" t="Include" />
                 <e p="DifficultyConfigurable.cs" t="Include" />
                 <e p="EulerTransformConfigurable.cs" t="Include" />
                 <e p="Experimental" t="Include">
+                  <e p="CameraConfigurable.cs" t="Include" />
                   <e p="ExternalMeshConfigurable.cs" t="Include" />
                   <e p="ExternalTextureConfigurable.cs" t="Include" />
                   <e p="LightConfigurable.cs" t="Include" />
@@ -336,7 +342,7 @@
                 </e>
                 <e p="Terms" t="Include">
                   <e p="CollidersPunishmentTerm.cs" t="Include" />
-                  <e p="CollsionsPunishmentTerm.cs" t="Include" />
+                  <e p="CollisionsPunishmentTerm.cs" t="Include" />
                   <e p="RushTerm.cs" t="Include" />
                   <e p="Term.cs" t="Include" />
                   <e p="TermComponentMenuPath.cs" t="Include" />
@@ -389,6 +395,7 @@
                 </e>
                 <e p="CategoricalObserver.cs" t="Include" />
                 <e p="CompassObserver.cs" t="Include" />
+                <e p="DistanceObserver.cs" t="Include" />
                 <e p="Grid" t="Include">
                   <e p="GoalCellObserver.cs" t="Include" />
                   <e p="GridPositionObserver.cs" t="Include" />
@@ -425,22 +432,36 @@
             <e p="Shaders" t="Include">
               <e p="Experimental" t="Include">
                 <e p="AllShader.shader" t="Include" />
+                <e p="FlatSegmentation.shader" t="Include" />
+                <e p="MultiMode.shader" t="Include" />
                 <e p="OpticalFlow.shader" t="Include" />
                 <e p="Outline.shader" t="Include" />
+                <e p="StereoEyeIndexColor.shader" t="Include" />
+                <e p="ValueRangePlotter.shader" t="Include" />
+                <e p="XR.shader" t="Include" />
               </e>
               <e p="FlatColor.shader" t="Include" />
               <e p="Model" t="Include">
                 <e p="Normal.shader" t="Include" />
                 <e p="Tangents.shader" t="Include" />
+                <e p="Us.shader" t="Include" />
                 <e p="UVs.shader" t="Include" />
+                <e p="Vs.shader" t="Include" />
               </e>
               <e p="ScreenSpaceFlow.shader" t="Include" />
               <e p="Segmentation" t="Include">
-                <e p="FlatSegmentation.shader" t="Include" />
+                <e p="CategorySegmentation.shader" t="Include" />
+                <e p="Individual" t="Include">
+                  <e p="LayerSegmentation.shader" t="Include" />
+                  <e p="MaterialIdSegmentation.shader" t="Include" />
+                  <e p="ObjectIdSegmentation.shader" t="Include" />
+                  <e p="TagSegmentation.shader" t="Include" />
+                </e>
                 <e p="OutlinedSegmentation.shader" t="Include" />
               </e>
               <e p="Spaces" t="Include">
-                <e p="Depth.shader" t="Include" />
+                <e p="CompressedDepth.shader" t="Include" />
+                <e p="MultiChannelDepth.shader" t="Include" />
                 <e p="ObjectSpace.shader" t="Include" />
                 <e p="WorldSpace.shader" t="Include" />
               </e>
@@ -485,7 +506,6 @@
                 <e p="Extensions" t="Include">
                   <e p="JointFix.cs" t="Include" />
                   <e p="Obstruction.cs" t="Include" />
-                  <e p="OnCollision.cs" t="Include" />
                   <e p="ParticleController.cs" t="Include" />
                 </e>
                 <e p="Grasping" t="Include">
@@ -494,6 +514,7 @@
                 <e p="Grid" t="Include">
                   <e p="GridCell.cs" t="Include" />
                 </e>
+                <e p="NeodroidConstants.cs" t="Include" />
                 <e p="NeodroidUtilities.cs" t="Include" />
                 <e p="Note.cs" t="Include" />
                 <e p="Orientation" t="Include">
@@ -513,17 +534,29 @@
               </e>
               <e p="NeodroidCamera" t="Include">
                 <e p="CameraObservationTextureController.cs" t="Include" />
-                <e p="DisparityCameraBehaviour.cs" t="Include" />
+                <e p="Experimental" t="Include">
+                  <e p="DisparityCameraBehaviour.cs" t="Include" />
+                </e>
                 <e p="FlowCameraBehaviour.cs" t="Include" />
                 <e p="IgnoreLightSource.cs" t="Include" />
                 <e p="InfraredLightSource.cs" t="Include" />
                 <e p="ReplacementShaderEffect.cs" t="Include" />
                 <e p="Segmentation" t="Include">
-                  <e p="ChangeMaterialOnRenderByInstance.cs" t="Include" />
-                  <e p="ChangeMaterialOnRenderByTag.cs" t="Include" />
+                  <e p="CategorySegmenter.cs" t="Include" />
+                  <e p="MaterialIdSegmenter.cs" t="Include" />
+                  <e p="ObjectIdSegmenter.cs" t="Include" />
+                  <e p="Obsolete" t="Include">
+                    <e p="ChangeMaterialOnRenderByInstance.cs" t="Include" />
+                    <e p="ChangeMaterialOnRenderByTag.cs" t="Include" />
+                    <e p="ObsoleteSegmenter.cs" t="Include" />
+                  </e>
                   <e p="Segmenter.cs" t="Include" />
                 </e>
                 <e p="SynchroniseCameraProperties.cs" t="Include" />
+                <e p="Synthesis" t="Include">
+                  <e p="ColorEncoding.cs" t="Include" />
+                  <e p="SynthesisUtilities.cs" t="Include" />
+                </e>
               </e>
               <e p="Noise" t="Include">
                 <e p="ProjectileSpammer.cs" t="Include" />
@@ -534,7 +567,6 @@
                 <e p="Meshes.cs" t="Include" />
                 <e p="PlotFunctions.cs" t="Include" />
                 <e p="ValueRangePlotter.cs" t="Include" />
-                <e p="ValueRangePlotter.shader" t="Include" />
               </e>
               <e p="ScriptableObjects" t="Include">
                 <e p="Curriculum.cs" t="Include" />
@@ -558,16 +590,17 @@
               </e>
               <e p="StatusDisplayer" t="Include">
                 <e p="AutoSetupStatusDisplayer.cs" t="Include" />
+                <e p="RenderTextureList.cs" t="Include" />
               </e>
               <e p="Structs" t="Include">
                 <e p="DoubleVector3.cs" t="Include" />
                 <e p="IntVector3.cs" t="Include" />
                 <e p="Points.cs" t="Include" />
                 <e p="SegmentationColor.cs" t="Include" />
+                <e p="Space1.cs" t="Include" />
                 <e p="Space2.cs" t="Include" />
                 <e p="Space3.cs" t="Include" />
                 <e p="Space4.cs" t="Include" />
-                <e p="ValueSpace.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -590,21 +623,101 @@
             </e>
           </e>
         </e>
-        <e p="unity-test-package" t="Include">
-          <e p="Editor" t="Include">
-            <e p="UnityTestPackage.Editor.asmdef" t="Include" />
-            <e p="UnityTestPackageWindow.cs" t="Include" />
+        <e p="InferenceModels" t="Include">
+          <e p="ONNX" t="Include">
+            <e p="OnnxModel.cs" t="Include" />
           </e>
-          <e p="Runtime" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="Rotate.cs" t="Include" />
+        </e>
+        <e p="Libaries" t="ExcludeRecursive" />
+        <e p="NVIDIA" t="Include">
+          <e p="Flex" t="Include">
+            <e p="Actors" t="Include">
+              <e p="FlexActor.cs" t="Include" />
+              <e p="FlexArrayActor.cs" t="Include" />
+              <e p="FlexClothActor.cs" t="Include" />
+              <e p="FlexSoftActor.cs" t="Include" />
+              <e p="FlexSolidActor.cs" t="Include" />
+              <e p="FlexSourceActor.cs" t="Include" />
             </e>
-            <e p="UnityTestPackage.Runtime.asmdef" t="Include" />
+            <e p="Assets" t="Include">
+              <e p="FlexArrayAsset.cs" t="Include" />
+              <e p="FlexAsset.cs" t="Include" />
+              <e p="FlexClothAsset.cs" t="Include" />
+              <e p="FlexContainer.cs" t="Include" />
+              <e p="FlexSoftAsset.cs" t="Include" />
+              <e p="FlexSolidAsset.cs" t="Include" />
+              <e p="FlexSourceAsset.cs" t="Include" />
+            </e>
+            <e p="Auxiliary" t="Include">
+              <e p="_auxFlexDetectShapes.cs" t="Include" />
+              <e p="_auxFlexDrawFluid.cs" t="Include" />
+              <e p="_auxFlexDrawParticles.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="Editors" t="Include">
+                <e p="FlexActorEditor.cs" t="Include" />
+                <e p="FlexArrayActorEditor.cs" t="Include" />
+                <e p="FlexArrayAssetEditor.cs" t="Include" />
+                <e p="FlexAssetEditor.cs" t="Include" />
+                <e p="FlexClothActorEditor.cs" t="Include" />
+                <e p="FlexClothAssetEditor.cs" t="Include" />
+                <e p="FlexClothDeformationEditor.cs" t="Include" />
+                <e p="FlexContainerEditor.cs" t="Include" />
+                <e p="FlexEditor.cs" t="Include" />
+                <e p="FlexFluidMaterialEditor.cs" t="Include" />
+                <e p="FlexFluidRendererEditor.cs" t="Include" />
+                <e p="FlexSoftActorEditor.cs" t="Include" />
+                <e p="FlexSoftAssetEditor.cs" t="Include" />
+                <e p="FlexSoftSkinningEditor.cs" t="Include" />
+                <e p="FlexSolidActorEditor.cs" t="Include" />
+                <e p="FlexSolidAssetEditor.cs" t="Include" />
+                <e p="FlexSourceActorEditor.cs" t="Include" />
+                <e p="FlexSourceAssetEditor.cs" t="Include" />
+              </e>
+              <e p="Tests" t="Include">
+                <e p="FlexActorTests.cs" t="Include" />
+                <e p="FlexAssetTests.cs" t="Include" />
+                <e p="FlexExtTests.cs" t="Include" />
+                <e p="FlexTests.cs" t="Include" />
+                <e p="FlexUtilsTests.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Helpers" t="Include">
+              <e p="FlexBuffer.cs" t="Include" />
+              <e p="FlexClothDeformation.cs" t="Include" />
+              <e p="FlexFluidRenderer.cs" t="Include" />
+              <e p="FlexParticleController.cs" t="Include" />
+              <e p="FlexScene.cs" t="Include" />
+              <e p="FlexSoftSkinning.cs" t="Include" />
+            </e>
+            <e p="Native" t="Include">
+              <e p="Flex.cs" t="Include" />
+              <e p="FlexExt.cs" t="Include" />
+              <e p="FlexUtils.cs" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="DebugPoints.shader" t="Include" />
+                <e p="FlexDrawFluid.cginc" t="Include" />
+                <e p="FlexDrawFluid.shader" t="Include" />
+                <e p="FlexDrawFluid2.shader" t="Include" />
+                <e p="FlexDrawParticles.shader" t="Include" />
+                <e p="FlexFluidShader.shader" t="Include" />
+                <e p="FlexPrepareFluid.shader" t="Include" />
+                <e p="FluidComposite.shader" t="Include" />
+                <e p="FluidDepth.shader" t="Include" />
+                <e p="FluidDepthBlur.shader" t="Include" />
+                <e p="FluidThickness.shader" t="Include" />
+                <e p="SourcePreview.shader" t="Include" />
+                <e p="SurfaceShader.shader" t="Include" />
+                <e p="SurfaceTest.shader" t="Include" />
+              </e>
+            </e>
           </e>
-          <e p="Tests" t="Include">
-            <e p="UnityTestPackage.Tests.asmdef" t="Include" />
-            <e p="UnityTestPackageTest.cs" t="Include" />
-          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="NeodroidGltfComponent.cs" t="Include" />
+          <e p="SetCorrectCameraHeight.cs" t="Include" />
         </e>
       </e>
       <e p="Inference.sln" t="IncludeFlat" />
@@ -612,13 +725,10 @@
       <e p="Neodroid.Editor.csproj" t="IncludeRecursive" />
       <e p="Neodroid.EditorTests.csproj" t="IncludeRecursive" />
       <e p="Neodroid.Runtime.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
       <e p="Temp" t="ExcludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
       </e>
-      <e p="UnityTestPackage.Editor.csproj" t="IncludeRecursive" />
-      <e p="UnityTestPackage.Runtime.csproj" t="IncludeRecursive" />
-      <e p="UnityTestPackage.Tests.csproj" t="IncludeRecursive" />
-      <e p="obj" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

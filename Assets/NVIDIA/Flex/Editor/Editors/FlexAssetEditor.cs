@@ -32,7 +32,7 @@ using UnityEngine.Rendering;
 namespace NVIDIA.Flex
 {
     [CustomEditor(typeof(FlexAsset))]
-    public class FlexAssetEditor : Editor
+    public class FlexAssetEditor : UnityEditor.Editor
     {
         protected PreviewRenderUtility m_previewRender = null;
         protected Vector3 m_cameraTarget = Vector3.zero;

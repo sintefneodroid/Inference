@@ -32,7 +32,7 @@ namespace NVIDIA.Flex
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(FlexSoftSkinning))]
-    public class FlexSoftSkinningEditor : Editor
+    public class FlexSoftSkinningEditor : UnityEditor.Editor
     {
         SerializedProperty m_skinningTarget;
         SerializedProperty m_skinningFalloff;
