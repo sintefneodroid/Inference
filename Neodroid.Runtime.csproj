@@ -5,9 +5,9 @@
     <CscToolPath>/home/heider/Unity/Hub/Editor/2019.1.0b1/Editor/Data/Tools/RoslynScripts</CscToolPath>
     <CscToolExe>unity_csc.sh</CscToolExe>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
     <_TargetFrameworkDirectories>non_empty_path_generated_by_rider_editor_plugin</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_rider_editor_plugin</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -62,12 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\droid\Runtime\EcsPrototyping\HelloRotationSpeedComponent.cs" />
+    <Compile Include="Assets\droid\Runtime\EcsPrototyping\HelloRotationSpeedSystem.cs" />
     <Compile Include="Assets\droid\Runtime\Environments\Experimental\ImitationEnvironment.cs" />
     <Compile Include="Assets\droid\Runtime\Environments\NeodroidEnvironment.cs" />
     <Compile Include="Assets\droid\Runtime\Environments\PrototypingEnvironment.cs" />
     <Compile Include="Assets\droid\Runtime\Environments\RandomisedEnvironment.cs" />
     <Compile Include="Assets\droid\Runtime\Environments\ScriptedEnviroment.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IActor.cs" />
+    <Compile Include="Assets\droid\Runtime\Interfaces\ICategoryProvider.cs" />
+    <Compile Include="Assets\droid\Runtime\Interfaces\IColorProvider.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IConfigurable.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IConfigurableConfiguration.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IDisplayer.cs" />
@@ -86,7 +90,6 @@
     <Compile Include="Assets\droid\Runtime\Interfaces\IHasString.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IHasTriple.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IManager.cs" />
-    <Compile Include="Assets\droid\Runtime\Interfaces\IMaterialManipulator.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IMotor.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IMotorMotion.cs" />
     <Compile Include="Assets\droid\Runtime\Interfaces\IObjective.cs" />
@@ -132,11 +135,13 @@
     <Compile Include="Assets\droid\Runtime\Prototyping\Actors\Actor.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Actors\ActorComponentMenuPath.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Actors\KillableActor.cs" />
+    <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\ChildSelectorConfigurable.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\ColorConfigurable.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\Configurable.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\ConfigurableComponentMenuPath.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\DifficultyConfigurable.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\EulerTransformConfigurable.cs" />
+    <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\Experimental\CameraConfigurable.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\Experimental\ExternalMeshConfigurable.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\Experimental\ExternalTextureConfigurable.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Configurables\Experimental\LightConfigurable.cs" />
@@ -182,7 +187,7 @@
     <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\SeekAndAvoidEvaluation.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\Tasks\TaskSequence.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\Terms\CollidersPunishmentTerm.cs" />
-    <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\Terms\CollsionsPunishmentTerm.cs" />
+    <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\Terms\CollisionsPunishmentTerm.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\Terms\RushTerm.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\Terms\Term.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Evaluation\Terms\TermComponentMenuPath.cs" />
@@ -216,6 +221,7 @@
     <Compile Include="Assets\droid\Runtime\Prototyping\Observers\Camera\StringAugmentedCameraObserver.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Observers\CategoricalObserver.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Observers\CompassObserver.cs" />
+    <Compile Include="Assets\droid\Runtime\Prototyping\Observers\DistanceObserver.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Observers\Grid\GoalCellObserver.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Observers\Grid\GridPositionObserver.cs" />
     <Compile Include="Assets\droid\Runtime\Prototyping\Observers\Observer.cs" />
@@ -262,10 +268,10 @@
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Drawing\NeodroidDrawingUtilities.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Extensions\JointFix.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Extensions\Obstruction.cs" />
-    <Compile Include="Assets\droid\Runtime\Utilities\Misc\Extensions\OnCollision.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Extensions\ParticleController.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Grasping\GraspingUtilities.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Grid\GridCell.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\Misc\NeodroidConstants.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\NeodroidUtilities.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Note.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Orientation\FollowTarget.cs" />
@@ -277,15 +283,21 @@
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\Procedural\SnakeSpaceFilling.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Misc\SearchableEnum\SearchableEnumAttribute.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\CameraObservationTextureController.cs" />
-    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\DisparityCameraBehaviour.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Experimental\DisparityCameraBehaviour.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\FlowCameraBehaviour.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\IgnoreLightSource.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\InfraredLightSource.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\ReplacementShaderEffect.cs" />
-    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\ChangeMaterialOnRenderByInstance.cs" />
-    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\ChangeMaterialOnRenderByTag.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\CategorySegmenter.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\MaterialIdSegmenter.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\ObjectIdSegmenter.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\Obsolete\ChangeMaterialOnRenderByInstance.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\Obsolete\ChangeMaterialOnRenderByTag.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\Obsolete\ObsoleteSegmenter.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Segmentation\Segmenter.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\SynchroniseCameraProperties.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Synthesis\ColorEncoding.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\NeodroidCamera\Synthesis\SynthesisUtilities.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Noise\ProjectileSpammer.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Noise\SelfDestruct.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Plotting\DrawSpaces.cs" />
@@ -307,6 +319,7 @@
     <Compile Include="Assets\droid\Runtime\Utilities\SerialisableDictionary\SerializableDictionaryImplementations.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\SerialisableDictionary\SerializedPropertyExtension.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\StatusDisplayer\AutoSetupStatusDisplayer.cs" />
+    <Compile Include="Assets\droid\Runtime\Utilities\StatusDisplayer\RenderTextureList.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Structs\DoubleVector3.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Structs\IntVector3.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Structs\Points.cs" />
@@ -315,21 +328,32 @@
     <Compile Include="Assets\droid\Runtime\Utilities\Structs\Space3.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Structs\Space4.cs" />
     <Compile Include="Assets\droid\Runtime\Utilities\Structs\ValueSpace.cs" />
-    <None Include="Assets\droid\Runtime\Shaders\Spaces\Depth.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Spaces\MultiChannelDepth.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Spaces\WorldSpace.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Model\Tangents.shader" />
-    <None Include="Assets\droid\Runtime\Utilities\Plotting\ValueRangePlotter.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Segmentation\Individual\MaterialIdSegmentation.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Experimental\ValueRangePlotter.shader" />
     <None Include="Assets\droid\Runtime\Shaders\FlatColor.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Segmentation\CategorySegmentation.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Model\Vs.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Spaces\CompressedDepth.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Model\Normal.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Model\Us.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Segmentation\OutlinedSegmentation.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Segmentation\Individual\TagSegmentation.shader" />
     <None Include="Assets\droid\Runtime\Neodroid.Runtime.asmdef" />
+    <None Include="Assets\droid\Runtime\Shaders\Segmentation\Individual\ObjectIdSegmentation.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Experimental\OpticalFlow.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Spaces\ObjectSpace.shader" />
-    <None Include="Assets\droid\Runtime\Shaders\Segmentation\FlatSegmentation.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Experimental\XR.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Experimental\FlatSegmentation.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Experimental\MultiMode.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Model\UVs.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Experimental\StereoEyeIndexColor.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Experimental\AllShader.shader" />
     <None Include="Assets\droid\Runtime\Shaders\ScreenSpaceFlow.shader" />
     <None Include="Assets\droid\Runtime\Shaders\Experimental\Outline.shader" />
+    <None Include="Assets\droid\Runtime\Shaders\Segmentation\Individual\LayerSegmentation.shader" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/home/heider/Unity/Hub/Editor/2019.1.0b1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
@@ -531,17 +555,17 @@
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
     </Reference>
-    <Reference Include="Priority Queue">
-      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/OptimizedPriorityQueue.4.1.1/lib/net45/Priority Queue.dll</HintPath>
-    </Reference>
-    <Reference Include="Neodroid-FlatBuffers">
-      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/Neodroid-FlatBuffers.1.0.0/lib/net45/Neodroid-FlatBuffers.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NetMQ">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/NetMQ.4.0.0.175-pre/lib/net40/NetMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Priority Queue">
+      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/OptimizedPriorityQueue.4.1.1/lib/net45/Priority Queue.dll</HintPath>
+    </Reference>
+    <Reference Include="Neodroid-FlatBuffers">
+      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/Neodroid-FlatBuffers.1.0.0/lib/net45/Neodroid-FlatBuffers.dll</HintPath>
     </Reference>
     <Reference Include="AsyncIO">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/AsyncIO.0.1.61/lib/net40/AsyncIO.dll</HintPath>

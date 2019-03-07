@@ -5,9 +5,9 @@
     <CscToolPath>/home/heider/Unity/Hub/Editor/2019.1.0b1/Editor/Data/Tools/RoslynScripts</CscToolPath>
     <CscToolExe>unity_csc.sh</CscToolExe>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
     <_TargetFrameworkDirectories>non_empty_path_generated_by_rider_editor_plugin</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_rider_editor_plugin</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -68,6 +68,29 @@
     <Compile Include="Assets\Bundles\Path\Core\Editor\PathEditor.cs" />
     <Compile Include="Assets\Bundles\Path\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
     <Compile Include="Assets\Bundles\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexActorEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexArrayActorEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexArrayAssetEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexAssetEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexClothActorEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexClothAssetEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexClothDeformationEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexContainerEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexFluidMaterialEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexFluidRendererEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexSoftActorEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexSoftAssetEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexSoftSkinningEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexSolidActorEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexSolidAssetEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexSourceActorEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Editors\FlexSourceAssetEditor.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Tests\FlexActorTests.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Tests\FlexAssetTests.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Tests\FlexExtTests.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Tests\FlexTests.cs" />
+    <Compile Include="Assets\NVIDIA\Flex\Editor\Tests\FlexUtilsTests.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -326,17 +349,17 @@
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
     </Reference>
-    <Reference Include="Priority Queue">
-      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/OptimizedPriorityQueue.4.1.1/lib/net45/Priority Queue.dll</HintPath>
-    </Reference>
-    <Reference Include="Neodroid-FlatBuffers">
-      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/Neodroid-FlatBuffers.1.0.0/lib/net45/Neodroid-FlatBuffers.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NetMQ">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/NetMQ.4.0.0.175-pre/lib/net40/NetMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Priority Queue">
+      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/OptimizedPriorityQueue.4.1.1/lib/net45/Priority Queue.dll</HintPath>
+    </Reference>
+    <Reference Include="Neodroid-FlatBuffers">
+      <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/Neodroid-FlatBuffers.1.0.0/lib/net45/Neodroid-FlatBuffers.dll</HintPath>
     </Reference>
     <Reference Include="AsyncIO">
       <HintPath>/home/heider/Projects/Neodroid/Inference/Assets/droid/Libraries/AsyncIO.0.1.61/lib/net40/AsyncIO.dll</HintPath>
@@ -704,14 +727,6 @@
     <ProjectReference Include="Neodroid.Editor.csproj">
       <Project>{5737CA1A-A0C8-A2B7-E1D3-A9B29E02851E}</Project>
       <Name>Neodroid.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityTestPackage.Editor.csproj">
-      <Project>{26121E51-DEDD-738A-928F-57D282CA6CC5}</Project>
-      <Name>UnityTestPackage.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityTestPackage.Runtime.csproj">
-      <Project>{4EF78702-2BAD-3997-8AC1-54EE03051F08}</Project>
-      <Name>UnityTestPackage.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Neodroid.Runtime.csproj">
       <Project>{3FD089F5-A47E-6902-5C11-4EBB2BEF9367}</Project>
