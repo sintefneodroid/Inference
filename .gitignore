@@ -18,6 +18,7 @@ JetBrains/
 *.orig
 *.meta~*
 
+.idea
 sysinfo.txt
 
 *.pidb.meta
