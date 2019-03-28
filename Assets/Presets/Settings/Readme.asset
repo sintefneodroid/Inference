@@ -3,52 +3,50 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
   m_Name: Readme
   m_EditorClassIdentifier: 
-  icon: {fileID: 2800000, guid: 360a87c8336f6ad4cb6258177b4d33cd, type: 3}
-  title: Lightweight RP for VR (Preview)
+  icon: {fileID: 2800000, guid: f3b461aa3ce4e164e80610d900c9b22d, type: 3}
+  iconMaxWidth: 192
+  title: SNAPS Prototype Pack
+  titlesub: 
   sections:
-  - heading: Lightweight Render Pipeline for VR
-    text: 'The Lightweight Scriptable Render Pipeline is currently still in development.
-      At this stage we are seeking feedback on the feature, but it should be considered
-      incomplete and subject to changes (API, UX, scope). As such, it is not covered
-      by regular Unity support. Please direct any questions to the:'
-    linkText: Preview Forum
-    url: 'https://forum.unity.com/categories/betas-experimental-features.86/'
-  - heading: 
-    text: 'This template is a good starting point for developers focused on performance
-      and VR projects that use a primarily baked lighting solution. This template
-      utilizes the Lightweight Scriptable Render Pipeline, a single-pass forward renderer.
-      Note that this project is designed to be used with a Virtual Reality device.
-      Make sure you have the correct SDKs for the device you are using before using
-      this template. '
+  - heading: About SNAPS Packs
+    text: 'The SNAPS Prototype Asset Packs are a set of themed 3D models built with
+      ProBuilder and is focused on making prototyping 3D levels faster and easier
+      for both beginners and experienced developers. '
     linkText: 
     url: 
   - heading: 
-    text: 'Visit the Unity XR manual pages for more information about VR: '
-    linkText: VR Overview
-    url: 'https://docs.unity3d.com/Manual/VROverview.html'
+    text: "SNAPS prefabs are built to real-world scale but are designed to \u201Csnap\u201D
+      together when used with ProGrids. \nGrid snap measurements start at 1m and are
+      halved ( eg. 0.5, 0.25, 0.125 etc ) according to refinement needed to place
+      or position smaller objects."
+    linkText: 
+    url: 
   - heading: 
-    text: 'To read more about the Lightweight Render Pipeline check out the Scriptable
-      Render Pipeline wiki here:'
-    linkText: Scriptable Render Pipeline
-    url: https://github.com/Unity-Technologies/ScriptableRenderPipeline/wiki
+    text: SNAP pack models were "modelled" entirely with ProBuilder, and are saved
+      as .asset prefabs. They can be further customized or modified with ProBuilder
+      by using the Probuilderize tool to enable editing.
+    linkText: 
+    url: 
   - heading: 
-    text: 'This project also includes the new shader graph tool. This tool allows
-      users to create shaders using a visual node editor instead of writing code.
-      Read more about the shader graph here:'
-    linkText: Shader Graph
-    url: https://github.com/Unity-Technologies/ShaderGraph/wiki
-  - heading: 
-    text: 'This project also includes the new Post-Processing stack, several presets
-      to jump start development, and example content. To learn more about Post-Processing
-      please refer to the wiki page located here:'
-    linkText: Post Processing
-    url: https://github.com/Unity-Technologies/PostProcessing/wiki
+    text: Each SNAPS Pack caters for a particular theme and while they can be used
+      together in a project, they are not designed to be "snap-able" between packs.
+      Different themes require different size and scale settings.
+    linkText: 
+    url: 
+  - heading: Requirements
+    text: SNAPS packs are meant to be used in unison with ProBuilder and ProGrids,
+      both available via the Package Manager. While the packs can be used without
+      using the features of either tool, ProBuilder will need to be installed at least
+      as the packs utilize the ProBuilder materials and shaders.
+    linkText: 
+    url: 
   loadedLayout: 1
