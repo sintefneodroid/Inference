@@ -53,3 +53,21 @@ The following packages were added:
 The following packages were updated:
   com.unity.package-manager-ui from version 2.0.3 to 2.1.1
   com.unity.render-pipelines.lightweight from version 4.8.0-preview to 5.2.3
+
+=== Mon Sep  2 15:01:40 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.2d.tilemap@1.0.0
+  com.unity.test-framework@1.0.17
+  com.unity.2d.sprite@1.0.0
+  com.unity.ide.vscode@1.0.7
+  com.unity.ide.rider@1.1.0
+  com.unity.ugui@1.0.0
+  com.unity.modules.androidjni@1.0.0
+The following packages were updated:
+  com.unity.probuilder from version 4.0.2 to 4.1.0
+The following packages were removed:
+  com.unity.package-manager-ui@2.0.3

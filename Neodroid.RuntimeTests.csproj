@@ -13,10 +13,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{653B18D3-03B1-849A-014B-E6A9215C3535}</ProjectGuid>
+    <ProjectGuid>{3E07BB87-5F4A-DEB1-CE33-DD19C0A5CB44}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Neodroid.RuntimeTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -60,134 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\BezierPath.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\EndOfPathInstruction.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\GlobalDisplaySettings.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\MinMax3D.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\PathCreator.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\PathCreatorData.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\PathSpace.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Objects\VertexPath.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Utility\CubicBezierUtility.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Utility\MathUtility.cs" />
-    <Compile Include="Assets\Bundles\Path\Core\Scripts\Utility\VertexPathUtility.cs" />
-    <Compile Include="Assets\Bundles\Path\Examples\Scripts\PathFollower.cs" />
-    <Compile Include="Assets\Bundles\Path\Examples\Scripts\PathFromObjects.cs" />
-    <Compile Include="Assets\Bundles\Path\Examples\Scripts\PathSceneTool.cs" />
-    <Compile Include="Assets\Bundles\Path\Examples\Scripts\RoadMeshCreator.cs" />
-    <Compile Include="Assets\Bundles\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\InferenceModels\ONNX\OnnxModel.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Actors\FlexActor.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Actors\FlexArrayActor.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Actors\FlexClothActor.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Actors\FlexSoftActor.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Actors\FlexSolidActor.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Actors\FlexSourceActor.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Assets\FlexArrayAsset.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Assets\FlexAsset.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Assets\FlexClothAsset.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Assets\FlexContainer.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Assets\FlexSoftAsset.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Assets\FlexSolidAsset.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Assets\FlexSourceAsset.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Auxiliary\_auxFlexDetectShapes.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Auxiliary\_auxFlexDrawFluid.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Auxiliary\_auxFlexDrawParticles.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Helpers\FlexBuffer.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Helpers\FlexClothDeformation.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Helpers\FlexFluidRenderer.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Helpers\FlexParticleController.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Helpers\FlexScene.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Helpers\FlexSoftSkinning.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Native\Flex.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Native\FlexExt.cs" />
-    <Compile Include="Assets\NVIDIA\Flex\Native\FlexUtils.cs" />
-    <Compile Include="Assets\Scripts\NeodroidGltfComponent.cs" />
-    <Compile Include="Assets\Scripts\SetCorrectCameraHeight.cs" />
-    <Compile Include="Assets\droid\Samples\MultiArmedBandit\MultiArmedBanditActuator.cs" />
-    <Compile Include="Assets\droid\Samples\MultiArmedBandit\MultiArmedBanditEvaluation.cs" />
-    <Compile Include="Assets\droid\Samples\MultiArmedBandit\RestlessMultiArmedBanditActuator.cs" />
-    <Compile Include="Assets\droid\Samples\MultiArmedBandit\TextBarPlotDisplayer.cs" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FlexDrawFluid.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FlexDrawFluid2.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FlexDrawFluid.cginc" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\SourcePreview.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FluidComposite.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FluidDepth.shader" />
-    <None Include="Assets\droid\Libraries\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.xml" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\DebugPoints.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FluidThickness.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FlexDrawParticles.shader" />
-    <None Include="Assets\droid\Gizmos\Icons\readme.txt" />
-    <None Include="Assets\droid\Libraries\NetMQ.4.0.0.175-pre\lib\net40\NetMQ.xml" />
-    <None Include="Assets\droid\Libraries\OptimizedPriorityQueue.4.1.1\lib\net45\Priority Queue.xml" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FlexFluidShader.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\SurfaceTest.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FluidDepthBlur.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\SurfaceShader.shader" />
-    <None Include="Assets\NVIDIA\Flex\Resources\Shaders\FlexPrepareFluid.shader" />
-    <Reference Include="Unity.ProGrids">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    <Compile Include="Assets\droid\Tests\Runtime\RegistrationTests.cs" />
+    <Compile Include="Assets\droid\Tests\Runtime\SanityTests.cs" />
+    <Compile Include="Assets\droid\Tests\Runtime\SimulatorTests.cs" />
+    <None Include="Assets\droid\Tests\Runtime\Neodroid.RuntimeTests.asmdef" />
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/home/heider/Unity/Hub/Editor/2019.3.0b1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -360,20 +247,8 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>/home/heider/Unity/Hub/Editor/2019.3.0b1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="FlatBuffers">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Assets/droid/Libraries/Neodroid-FlatBuffers.1.0.0/lib/net45/FlatBuffers.dll</HintPath>
-    </Reference>
-    <Reference Include="NetMQ">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Assets/droid/Libraries/NetMQ.4.0.0.175-pre/lib/net40/NetMQ.dll</HintPath>
-    </Reference>
-    <Reference Include="Priority Queue">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Assets/droid/Libraries/OptimizedPriorityQueue.4.1.1/lib/net45/Priority Queue.dll</HintPath>
-    </Reference>
-    <Reference Include="AsyncIO">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Assets/droid/Libraries/AsyncIO.0.1.61/lib/net40/AsyncIO.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Assets/droid/Libraries/Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>/home/heider/Projects/Alexandra/Unity/Inference/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>/home/heider/Unity/Hub/Editor/2019.3.0b1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -731,13 +606,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Neodroid.Editor.csproj">
-      <Project>{5737CA1A-A0C8-A2B7-E1D3-A9B29E02851E}</Project>
-      <Name>Neodroid.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Neodroid.Runtime.csproj">
       <Project>{3FD089F5-A47E-6902-5C11-4EBB2BEF9367}</Project>
       <Name>Neodroid.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Neodroid.Editor.csproj">
+      <Project>{5737CA1A-A0C8-A2B7-E1D3-A9B29E02851E}</Project>
+      <Name>Neodroid.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
